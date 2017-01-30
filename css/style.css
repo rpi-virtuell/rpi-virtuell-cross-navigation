@@ -1,0 +1,20 @@
+/**
+ * @package   RPI Multi-Instanz Navigation
+ * @author    Joachim Happel
+ * @license   GPL-2.0+
+ * @link      https://github.com/rpi-virtuell/rw-multiinstanz-navigation
+ */
+
+.rw-multiinstanz-navigation-message{
+    position: relative;
+    border: 3px solid #2E789B;
+    text-align: center;
+    background-color: darkred;
+}
+.rw-multiinstanz-navigation-message, .rw-multiinstanz-navigation-message a{
+    color:snow;
+}
+.rw-multiinstanz-navigation-message a:hover{
+    color:lightgoldenrodyellow;
+    text-decoration: underline;
+}
