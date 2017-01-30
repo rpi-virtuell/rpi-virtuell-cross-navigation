@@ -18,14 +18,14 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path:       /languages
  * Text Domain:       rw-multiinstanz-navigation
- * Network:           true
+ * Network:           false
  * GitHub Plugin URI: https://github.com/rpi-virtuell/rw-multiinstanz-navigation
  * GitHub Branch:     master
  * Requires WP:       4.0
  * Requires PHP:      5.3
  */
 
-// @TODO Klassenname
+
 class RW_MultiInstanz_Navigation {
     /**
      * Plugin version
@@ -149,25 +149,25 @@ class RW_MultiInstanz_Navigation {
         //@TODO uncomment what you need
 
         //enable and load css and js files
-        // add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_style' ) );
-        // add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
-        // do_action( 'rw_multiinstanz_navigation_enqueue' );
+         add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_style' ) );
+         add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
+         do_action( 'rw_multiinstanz_navigation_enqueue' );
 
         //enable ajax examples
-         //add_action( 'admin_enqueue_scripts',    array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
-         //add_action( 'wp_ajax_rw_multiinstanz_navigation_core_ajaxresponse' ,array( 'RW_MultiInstanz_Navigation_Core','ajaxresponse' )  );
+         add_action( 'admin_enqueue_scripts',    array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
+         add_action( 'wp_ajax_rw_multiinstanz_navigation_core_ajaxresponse' ,array( 'RW_MultiInstanz_Navigation_Core','ajaxresponse' )  );
 
         //enable an widget
         //add_action('widgets_init',             array( 'RW_MultiInstanz_Navigation_Widget','init' ) );
         //do_action( 'rw_multiinstanz_navigation_widget_init' );
 
         //enable options setting in backend
-        //add_action('init',             array( 'RW_MultiInstanz_Navigation_Settings','init' ) ,99);
-        //do_action( 'rw_multiinstanz_navigation_settings_init' );
+        add_action('init',             array( 'RW_MultiInstanz_Navigation_Settings','init' ) ,99);
+        do_action( 'rw_multiinstanz_navigation_settings_init' );
 
         //enable custom template functions
-        //add_action( 'init',  array( 'RW_MultiInstanz_Navigation_Template','init' ) );
-        //do_action( 'rw_multiinstanz_navigation_template_init' );
+        add_action( 'init',  array( 'RW_MultiInstanz_Navigation_Template','init' ) );
+        do_action( 'rw_multiinstanz_navigation_template_init' );
 
         //enable buddypress functions
         //add_action( 'bp_include',      array( 'RW_MultiInstanz_Navigation_Buddypress','init' ) ,99);
