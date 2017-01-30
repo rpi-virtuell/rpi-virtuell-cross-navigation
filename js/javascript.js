@@ -7,38 +7,55 @@
 
 jQuery(document).ready(function($){
 
-    $('#rw-multiinstanz-navigation-setting-page-ajaxresponse').parent().hide();
 
 
-    $( document ).on( 'click', 'body', function() {
+    $.ajax({
+        type: 'POST',
+        url: rw_mn_ajax.ajaxurl,     // the variable ajaxurl is prepared by wp core
+        data: {
+            action: 'rw_multiinstanz_navigation_core_ajaxresponse',
+            user: reliwerk_cas_user_account
+        },
+        success: function (data, textStatus, XMLHttpRequest) {
 
-        var d=new Date();
+            readData = $.parseJSON(data);
+            console.log($.parseJSON(data));
 
-        $.ajax({
-            type: 'POST',
-            url: ajaxurl,     // the variable ajaxurl is prepared by wp core
-            data: {
-                action: 'rw_multiinstanz_navigation_core_ajaxresponse',
-                message: d.toString()
-            },
-            success: function (data, textStatus, XMLHttpRequest) {
+            switch (readData.status ){
+                case 'not-logged-in-user':
+                    if($('#rpi-user-name')){
 
-                readData = $.parseJSON(data);
-                console.log($.parseJSON(data));
+                        $('#rpi-user-name').html(  readData.name  );
+                        $('#rpi-user-avatar').html(  readData.avatar  );
+                        $('#rpi-user-status').html(  'Du bist als ' + reliwerk_cas_user_account + ' am Loginserver angemeldet!'  );
 
-                if($('#rw-multiinstanz-navigation-setting-page-ajaxresponse')){
-                    $('#rw-multiinstanz-navigation-setting-page-ajaxresponse').html(  readData.msg  );
-                    $('#rw-multiinstanz-navigation-setting-page-ajaxresponse').parent().show();
-                }
+                    }
+                    break;
+                case 'logged-in':
+                    if($('#rpi-user-name')){
 
+                        $('#rpi-user-name').html(  readData.name  );
+                        $('#rpi-user-avatar').html(  readData.avatar  );
 
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                console.log(errorThrown);
+                    }
+                    break;
+                case 'do-loggin':
+                    document.location.href='/wp-login.php';
+                    break;
+                default: //unknown
+
             }
-        });
 
-    });    
+
+
+
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            console.log(errorThrown);
+        }
+    });
+
+
     
 });
 

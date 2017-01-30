@@ -151,12 +151,18 @@ class RW_MultiInstanz_Navigation {
         //enable and load css and js files
          add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_style' ) );
          add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
+
          do_action( 'rw_multiinstanz_navigation_enqueue' );
 
-        //enable ajax examples
-         add_action( 'admin_enqueue_scripts',    array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
-         add_action( 'wp_ajax_rw_multiinstanz_navigation_core_ajaxresponse' ,array( 'RW_MultiInstanz_Navigation_Core','ajaxresponse' )  );
+        //enable ajax
+        add_action( 'admin_enqueue_scripts',    array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
+        add_action( 'wp_ajax_rw_multiinstanz_navigation_core_ajaxresponse' ,array( 'RW_MultiInstanz_Navigation_Core','ajaxresponse' )  );
 
+        //because WordPress does not automatically do ajax actions for users not logged-in,we need this as workarround
+        if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'rw_multiinstanz_navigation_core_ajaxresponse' ):
+            do_action( 'wp_ajax_' . $_REQUEST['action'] );
+            do_action( 'wp_ajax_nopriv_' . $_REQUEST['action'] );
+        endif;
         //enable an widget
         //add_action('widgets_init',             array( 'RW_MultiInstanz_Navigation_Widget','init' ) );
         //do_action( 'rw_multiinstanz_navigation_widget_init' );

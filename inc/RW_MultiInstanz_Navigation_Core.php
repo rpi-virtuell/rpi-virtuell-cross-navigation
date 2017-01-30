@@ -46,7 +46,8 @@ class RW_MultiInstanz_Navigation_Core {
      * @use_action: wp_enqueue_scripts
      */
     public static function enqueue_style() {
-        wp_enqueue_style( 'customStyle',RW_MultiInstanz_Navigation::$plugin_url . '/css/style.css' );
+        wp_enqueue_style( 'customStyle',RW_MultiInstanz_Navigation::$plugin_url . 'css/style.css' );
+        wp_enqueue_style( 'font-awesome',RW_MultiInstanz_Navigation::$plugin_url . 'css/font-awesome.min.css' );
     }
 
     /**
@@ -60,7 +61,10 @@ class RW_MultiInstanz_Navigation_Core {
      */
     public static function enqueue_js() {
 
-        wp_enqueue_script( 'rw_multiinstanz_navigation_ajax_script',RW_MultiInstanz_Navigation::$plugin_url . '/js/javascript.js' );
+        wp_enqueue_script( 'rw_cas_accunt_script','//login.reliwerk.de/account.php',array() ,'0.0.2', true );
+        wp_enqueue_script( 'rw_multiinstanz_navigation_ajax_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/javascript.js' ,array() ,'0.0.2', true);
+        wp_localize_script( 'rw_multiinstanz_navigation_ajax_script', 'rw_mn_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
 
     }
 
@@ -78,18 +82,35 @@ class RW_MultiInstanz_Navigation_Core {
      */
     public static function ajaxresponse(){
 
-        echo json_encode(
-            array(
-                    'success' =>  true
-                ,   'msg'=>'Ajax Example. <em>Users time on click</em> : <b>'.
-                            $_POST['message'] .
-                            '</b> ( scripts locatet in: inc/'.
-                            basename(__FILE__).' (Line: '.__LINE__.
-                            ') | js/javascript.js )'
-            )
-        );
+        $login_name = $_POST['user'];
 
+        $user = get_user_by('login',$login_name);
+        if($user && is_a($user,'WP_User')){
+
+
+
+            if(is_user_logged_in() && wp_get_current_user() == $user){
+                $status = 'logged-in';
+            }elseif(is_user_logged_in() && wp_get_current_user() != $user){
+                $status = 'not-logged-in-user';
+            }else{
+                $status = 'do-loggin';
+            }
+
+            echo json_encode(array(
+                'success' =>  true
+                ,'name'=>$user->display_name
+                ,'status'=>$status
+                ,'avatar'=>get_avatar($user->ID)
+            ));
+        }else{
+            echo json_encode(array(
+                'success' =>  false
+                ,'name'=>'anonym'
+                ,'status'=> 'unknown user'
+
+            ));
+        }
         die();
-
     }
 }
