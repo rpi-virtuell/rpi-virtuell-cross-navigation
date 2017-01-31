@@ -7,7 +7,30 @@
 
 jQuery(document).ready(function($){
 
+    $("#rpi-services-button").toggle(function () {
+        $("#more-rpi-container-dialog").dialog('open');
+    },function () {
+        $("#more-rpi-container-dialog").dialog('close');
+    });
 
+    $("#more-rpi-container-dialog").dialog({
+        autoOpen: false,
+        dialogClass: "rpi-header-dialog",
+        modal: false,
+        responsive: true,
+        show: {
+            effect: "slideDown",
+            duration: 250
+        },
+        hide: {
+            effect: "slideUp",
+            duration: 250
+        },
+        position:{
+            at: "left bottom",
+            of: $('#rpi-services-button')
+        }
+    });
 
     $.ajax({
         type: 'POST',

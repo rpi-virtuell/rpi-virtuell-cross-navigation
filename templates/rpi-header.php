@@ -6,72 +6,102 @@
  * Time: 13:33
  */
 ?>
+<div id="more-rpi-container-dialog" title="Dienste von rpi-virtuell">
+    <div class="rpi-container-dialog-content">
+        Mehr von rpi-virtuell
+    </div>
+
+</div>
 <header id="rpi-masthead" class="rpi-site-header" role="banner" data-infinite="on">
 
     <div class="rpi-header-wrap">
-        <div class="rpi-header-outher">
+        <div class="rpi-header">
 
-            <div class="rpi-header-inner">
                 <div class="rpi-left-col">
-                    <div class="rpi-table">
 
-                        <div class="rpi-header-links">
+                    <div class="rpi-header-logo" style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi_logo_small.jpg') no-repeat;">
+                        <img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi_logo_small.jpg">
+                        <p class="rpi-header-blogname"><?php echo get_bloginfo('name');?></p>
+                    </div><!--.header-links-->
 
-                            <!-- Menu Button -->
-                            <a href="#" class="rpi-toggle icon" id="rpi-left-menu-toggle" title="Menü">
-                                <i class="fa fa-bars"></i>
-                            </a><!--.menu-toggle-->
-
-
-                        </div><!--.header-links-->
-                        <div class="header-navigation">
-                            <p></p>
-                        </div><!--.header-links-->
-                        <div id="rpi-header-space">
-                            <!--.header-mitte-->
-                        </div>
-                    </div>
                 </div><!--.left-col-->
 
-                <div class="rpi-right-col hide open">
-
-
-                    <!-- mehr rpi-virtuell -->
-                    <div class="rpi-header-services">
-                        <a class="rpi-notification-link fa fa-th-large" href="http://about.rpi-virtuell.de"></a>
-                    </div>
-                    <!-- Notification -->
-                    <div class="rpi-header-notifications">
-                        <a class="rpi-notification-link fa fa-bell" href="http://gruppen.rpi-virtuell.de/members/<?php echo $user_login; ?>/notifications/">
-                            <span id="rpi-pending-notifications" class="count no-alert">0</span>
-                        </a>
-                    </div>
-
-                    <div class="rpi-header-account-login">
-
-
-                        <a class="user-link" href="http://gruppen.rpi-virtuell.de/members/joachim-happel/">
-                            <span id="rpi-user-name" class="name"></span>
-                            <span id="rpi-user-avatar"></span>
-                            <span id="rpi-user-status"></span>
-                        </a>
-
-                        <div class="pop">
-
-                            <!-- Dashboard links -->
-
-                            <!-- Adminbar -->
-                            <div id="adminbar-links" class="bp_components">
-                                <span class="logout">
-                                    <a href="/wp-login.php?action=logout">Abmelden</a>
-                                </span>
-                            </div>
+                <div class="rpi-center-col">
+                    <div class="header-navigation">
+                        <div id="header-menu">
+                            <ul>
+				                <li>
+                                    <a href="#">Datenschutzerklärung</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nutzungsbedingungen</a>
+                                </li>
+                                <li>
+                                    <a href="#">Impressum</a>
+                                </li>
+                                <li>
+                                    <a href="#">Kontakt</a>
+                                </li>
+                            </ul>
                         </div>
 
+                    </div>
+                </div><!--.center-col-->
+
+                <div class="rpi-right-col">
+                    <div class="header-navigation">
+
+
+
+                        <?php if(!is_user_logged_in()):?>
+                        <ul>
+                            <li class="rpi-header-services">
+                                <a id="rpi-services-button" style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-button.png') no-repeat; background-size: contain"
+                                   href="http://about.rpi-virtuell.de"></a>
+                            </li>
+                            <?php if ( RW_MultiInstanz_Navigation_Settings::get( 'loginbutton' ) ) :?>
+                                <?php if ( get_option( 'users_can_register' ) ) :?>
+                                    <li class="rpi-header-button register-button">
+                                        <a href="<?php echo wp_registration_url();?>" title="Registrieren">Registrieren</a>
+                                    </li>
+                                <?php endif;?>
+                                <li class="rpi-header-button login-button">
+                                    <a href="<?php echo wp_login_url(); ?>" title="Anmelden">Anmelden</a>
+                                </li>
+                                <?php endif;?>
+
+                        </ul>
+                        <?php else: $user=wp_get_current_user();?>
+                        <ul class="rpi-header-account">
+                            <!-- mehr rpi-virtuell -->
+                            <li class="rpi-header-services">
+                                <a id="rpi-services-button" style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-button.png') no-repeat; background-size: contain"
+                                   href="#rpi-virtuell"></a>
+                            </li>
+                            <!-- Notification -->
+                            <li class="rpi-header-notifications icon-button">
+                                <a class="rpi-notification-link fa fa-bell" href="http://gruppen.rpi-virtuell.de/members/<?php echo $user->user_login; ?>/notifications/">
+                                    <span id="rpi-pending-notifications" class="count no-alert">0</span>
+
+                                </a>
+                            </li>
+
+                            <li class="rpi-header-avatar">
+                                <div id="rpi-user-avatar"></div>
+
+                                <a class="rpi-user-url" href="http://gruppen.rpi-virtuell.de/members/joachim-happel/">
+                                    <span id="rpi-user-name" class="name"></span>
+                                    <!--<span id="rpi-user-status"></span>-->
+                                </a>
+
+                            </li>
+                            <!--<li id="rpi-header-menu" class="rpi-header-menu">
+                                <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+                            </li>-->
+                        </ul>
+                        <?php endif;?>
                     </div>
                 </div>
             </div>
-        </div><!-- .header-wrap -->
-    </div><!-- .header-outher -->
-
+    </div>
 </header>

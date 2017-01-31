@@ -7,7 +7,7 @@
  */
 function rw_multiinstanz_navigation_action( $post_object ) {
     ?>
-        <div class="rw-multiinstanz-navigation-message">
+        <div id="rw-mn">
             <?php include(  apply_filters('rw_rpi_navi_template_filter','rpi-header.php')  );?>
         </div>
     <?php

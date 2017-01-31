@@ -5,16 +5,190 @@
  * @link      https://github.com/rpi-virtuell/rw-multiinstanz-navigation
  */
 
-.rw-multiinstanz-navigation-message{
+#rw-mn{
     position: relative;
-    border: 3px solid #2E789B;
-    text-align: center;
-    background-color: darkred;
+    background-color: #337A9A;
+    z-index: 1;
 }
-.rw-multiinstanz-navigation-message, .rw-multiinstanz-navigation-message a{
+#rw-mn, #rw-mn a{
     color:snow;
 }
-.rw-multiinstanz-navigation-message a:hover{
+#rw-mn a:hover{
     color:lightgoldenrodyellow;
     text-decoration: underline;
+}
+
+#rw-mn .rpi-header{
+    display: flex;
+    flex-flow: nowrap;
+    min-width: 400px;
+    height: 65px;
+    max-width: 100%;
+}
+#rw-mn .rpi-left-col{
+    flex: 0 280px;
+
+}
+#rw-mn .rpi-center-col{
+    flex: 1 0px;
+    position: relative;
+
+}
+
+@media all and (max-width: 800px) {
+    #rw-mn .rpi-center-col{
+        display: none;
+    }
+    #rw-mn .rpi-left-col{
+        flex: 0 280px;
+    }
+    #rw-mn .rpi-right-col{
+        flex: 1;
+    }
+}
+@media all and (max-width: 600px) {
+    #rw-mn .rpi-left-col{
+        display: none;
+    }
+}
+#rw-mn .rpi-right-col{
+    flex: 0 350px;
+
+}
+#rw-mn .rpi-header-logo{
+    line-height: 1;
+    background-position: 0 -16px!important;
+    height: 65px;
+}
+#rw-mn .rpi-header-logo p{
+    float:right;
+    width: 215px;
+    overflow: hidden;
+    color:snow;
+    padding: 15px 0 0 30px;
+    font-family: "Arial Black";
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+#rw-mn .rpi-header-logo img{
+    height: 50px;
+    opacity:0;
+}
+
+
+#rw-mn div.rpi-header-button:hover{
+    background-color: #008EBC ;
+}
+#rw-mn .rpi-center-col .header-navigation{
+    margin-top: -15px;
+    float:right;
+}
+
+#rw-mn .rpi-right-col .header-navigation ul{
+    margin: 0;
+}
+#rw-mn .header-navigation ul{
+    list-style: none;
+
+}
+#rw-mn .header-navigation li{
+    float: left;
+    padding-left: 15px;
+}
+#rw-mn .rpi-center-col .header-navigation li {
+    font-size: 11px;
+}
+
+#rw-mn .rpi-right-col .header-navigation{
+    width:100%;
+    display: block;
+    height:65px;
+    overflow: hidden;
+}
+
+#rw-mn .rpi-header-button{
+    width: auto;
+    text-align: center;
+    padding: 3px 20px;
+    background-color: #00A6DC;
+    margin:19px;
+    border-radius: 3px;
+    margin: 20px 6px auto auto;
+}
+#rw-mn .rpi-header-button a{
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+#rw-mn .rpi-header-account{
+    float: right;;
+}
+
+#rw-mn .rpi-header-account li.icon-button{
+    padding: 10px 20px;
+    font-size: 30px;
+}
+
+#rw-mn .rpi-header-avatar{
+    width:110px;
+    height:80px;
+    position:relative;
+}
+#rw-mn .rpi-user-url {
+    position: absolute;
+    top: 46px;
+    font-size: 10px;
+}
+
+#rw-mn #rpi-user-avatar img{
+    border-radius:50%;
+    width:50px;
+    margin-left: 10px;
+}
+
+.rpi-header-services {
+    width: 55px;
+    height: 50px;
+    margin: 10px 20px 0;
+}
+
+a#rpi-services-button{
+    display:block;
+    width:55px;
+    height:55px;
+
+}
+
+#more-rpi-container-dialog { display: none; }
+
+a.rpi-notification-link{
+    color:#c0c0c0 !important;
+}
+.rpi-header-dialog{
+    margin-top:96px;
+    margin-right:185px;
+    background-color: #337A9A!important;
+    border: none!important;
+}
+
+.rpi-header-dialog .ui-dialog-titlebar{
+    background: #EDEDED !important;
+    border: none !important;
+    color:#337A9A;
+    border-radius: 0;
+}
+.rpi-header-dialog div.rpi-container-dialog-content{
+    color: snow;
+}
+.rpi-header-dialog .ui-button .ui-icon{
+    background: #F56800 none;
+}
+
+#rpi-header-dropdown, #rpi-left-menu-toggle, #rpi-pending-notifications{
+    display:none;
+
 }

@@ -18,10 +18,11 @@ class RW_MultiInstanz_Navigation_Settings {
     static public function init(){
 
         self::check_nonce_requests();
-        self::init_options();
+        self::set_defaults();
 
         add_action( 'admin_menu', array('RW_MultiInstanz_Navigation_Settings','options_page') );
         add_action( 'network_admin_menu', array('RW_MultiInstanz_Navigation_Settings','options_page') );
+
 
         //enable custum dashboard widget
         //add_action('wp_dashboard_setup', array('RW_MultiInstanz_Navigation_Settings', 'dashboard_widgets') );
@@ -50,13 +51,9 @@ class RW_MultiInstanz_Navigation_Settings {
         register_setting( 'section_1', RW_MultiInstanz_Navigation_Settings::$option_name );
 
         add_settings_section(
-            'rw-multiinstanz-navigation-setting-page',                                          // id of the setting page
-            __( 'Sample Options', RW_MultiInstanz_Navigation::get_textdomain() ),        // section title
-            function(){                                                             // intro text before the input fields
-                _e( 'Section intro Description....', RW_MultiInstanz_Navigation::get_textdomain() );
-            },
-            'section_1'
+            'rw-multiinstanz-navigation-setting-page', false,false,'section_1'
         );
+
 
 
         /* --- Create form fiels to the first Section 1 ----- */
@@ -66,46 +63,53 @@ class RW_MultiInstanz_Navigation_Settings {
          *  Beispiele: 
          */
 
-        /* --- Checkbox 1 ----- */
+        /* --- Checkbox loginbutton ----- */
 
-        function rw_checkbox_1_draw(  ) {
+        function rw_checkbox_loginbutton_draw(  ) {
 
-            $optname = 'option1';
+            $optname = 'loginbutton';
 
             $options = RW_MultiInstanz_Navigation_Settings::$options;   //read exiting value from wp options table
             $checked = ( isset( $options[$optname] ) && $options[$optname] ) ? true : false;
             ?>
             <input class="rw-multiinstanz-navigation-option-checkbox" type='checkbox' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[<?php echo $optname;?>]' <?php checked( $checked ); ?> value='1'>
-            <?php _e('If activated ... ',RW_MultiInstanz_Navigation::get_textdomain()) ; ?>
+            <?php _e('If activated, signup buttons will be displayed in the cross-site navigation',RW_MultiInstanz_Navigation::get_textdomain()) ; ?>
             <?php
 
         }
         add_settings_field(
-            'option1',                                              // Option Index
-            __( 'Check this', RW_MultiInstanz_Navigation::get_textdomain() ),   // Label
-            'rw_checkbox_1_draw',                                   // function to draw HTML Input
+	        'loginbutton',                                              // Option Index
+            __( 'Anmeldung', RW_MultiInstanz_Navigation::get_textdomain() ),   // Label
+            'rw_checkbox_loginbutton_draw',                         // function to draw HTML Input
             'section_1',                                            // section slug
-            'rw-multiinstanz-navigation-setting-page'                           // id der setting page
+            'rw-multiinstanz-navigation-setting-page'               // id der setting page
         );
 
+
+
         /* --- Textfield ----- */
+
         function rw_textfield_draw(  ) {
+
+            $option='buddypress-url';
             $options = RW_MultiInstanz_Navigation_Settings::$options;
             ?>
-            <input class="rw-multiinstanz-navigation-option-textfield" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[option2]' value='<?php echo $options['option2']; ?>'>
+            <input class="rw-multiinstanz-navigation-option-textfield" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name.'['.$option.']'; ?>' value='<?php echo $options[$option]; ?>'>
             <?php
         }
 
         add_settings_field(
-            'option2',
-            __( 'A Textbox', RW_MultiInstanz_Navigation::get_textdomain() ),
+	        'buddypress-url',
+            __( 'Url to Buddypress Instanz', RW_MultiInstanz_Navigation::get_textdomain() ),
             'rw_textfield_draw',
             'section_1',
             'rw-multiinstanz-navigation-setting-page'
         );
 
+
         /* --- Selectbox ----- */
 
+        /*
         function rw_selectfield_draw(  ) {
             $options = RW_MultiInstanz_Navigation_Settings::$options;
 
@@ -134,11 +138,10 @@ class RW_MultiInstanz_Navigation_Settings {
             'section_1',
             'rw-multiinstanz-navigation-setting-page'
         );
-
+        */
     }
 
     /**
-     * @TODO Create the settings form
      *
      * @usedBy: add_options_page()
      * @since 0.0.2
@@ -146,32 +149,23 @@ class RW_MultiInstanz_Navigation_Settings {
     static public function the_options_form(){
 
         ?>
-        <form class="rw-multiinstanz-navigation-option-form" action='options.php' method='post'>
+        <h1><?php _e('Settings'); ?> > RPI Multi-Instanz Navigation </h1>
+	    <?php  _e('Settings for RPI Multi-Instanz Navigation',RW_MultiInstanz_Navigation::get_textdomain());?>
 
-            <h1><?php _e('Settings'); ?> > RPI Multi-Instanz Navigation </h1>
+	    <hr>
+
+	    <form class="rw-multiinstanz-navigation-option-form" action='options.php' method='post'>
             <?php
-            _e('Settings for RPI Multi-Instanz Navigation',RW_MultiInstanz_Navigation::get_textdomain());
-
-            echo '<hr>';
-
-            //slot for js/ajax messages
-            echo '<div class="notice notice-info"><p id="rw-multiinstanz-navigation-setting-page-ajaxresponse" ></p></div>';
-
             settings_fields( 'section_1' );
             do_settings_sections( 'section_1' );
-
-
-            echo '<hr>';
-
             submit_button();
-
             self::print_set_defaults_button();
-
             ?>
-
         </form>
+
+
         <hr>
-        RPI Multi-Instanz Navigation <?php echo __('was developed by',RW_MultiInstanz_Navigation::get_textdomain()); ?> Demo Autor (rpi-virtuell).
+        RPI Multi-Instanz Navigation <?php echo __('was developed by',RW_MultiInstanz_Navigation::get_textdomain()); ?> Joachim Happel (rpi-virtuell).
         <?php
     }
 
@@ -180,22 +174,39 @@ class RW_MultiInstanz_Navigation_Settings {
      *
      * @since 0.0.2
      */
-    static public function init_options(){
+    static public function set_defaults(){
 
         RW_MultiInstanz_Navigation_Settings::$options = get_option( RW_MultiInstanz_Navigation_Settings::$option_name );
+
         if(!RW_MultiInstanz_Navigation_Settings::$options){
 
             update_option(RW_MultiInstanz_Navigation_Settings::$option_name,array(
-                'option1'=>0,
-                'option2'=>'default wert',
-                'option3'=>''
+                'loginbutton'=>1,
+                'buddypress-url'=>'http://gruppen.rpi-virtuell.de'
             ));
 
         }
 
     }
 
-    /**
+	/**
+	 * get option value
+	 *
+	 * @since 0.0.2
+	 */
+	static public function get($option){
+
+		RW_MultiInstanz_Navigation_Settings::$options = get_option( RW_MultiInstanz_Navigation_Settings::$option_name );
+
+		if(isset(RW_MultiInstanz_Navigation_Settings::$options[$option])){
+			return RW_MultiInstanz_Navigation_Settings::$options[$option];
+        }
+		return false;
+
+	}
+
+
+	/**
      * checks incomming url request
      *
      */
@@ -203,9 +214,11 @@ class RW_MultiInstanz_Navigation_Settings {
 
         //Beispiel: Alle Plugin Einstellungen in der DB löschen set_defaults_button()
 
-        if (isset($_GET['rw_multiinstanz_navigation_nonce']) && wp_verify_nonce($_GET['rw_multiinstanz_navigation_nonce'], 'set_defaults_button' ) ) {
+	    if (isset($_GET['rw_multiinstanz_navigation_nonce']) && wp_verify_nonce($_GET['rw_multiinstanz_navigation_nonce'], 'set_defaults_button' ) ) {
 
             delete_option(RW_MultiInstanz_Navigation_Settings::$option_name);
+
+
 
             wp_redirect(admin_url( 'options-general.php?page=rw-multiinstanz-navigation&action=set_defaults_button' ));
 
