@@ -65,6 +65,28 @@ class RW_MultiInstanz_Navigation_Settings {
 
         /* --- Checkbox loginbutton ----- */
 
+        function rw_checkbox_activate_header_bar_draw(  ) {
+
+            $optname = 'headerbar';
+
+            $options = RW_MultiInstanz_Navigation_Settings::$options;   //read exiting value from wp options table
+            $checked = ( isset( $options[$optname] ) && $options[$optname] ) ? true : false;
+            ?>
+            <input class="rw-multiinstanz-navigation-option-checkbox" type='checkbox' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[<?php echo $optname;?>]' <?php checked( $checked ); ?> value='1'>
+            <?php _e('If activated, a header cross site rpi-virtuell bar will be displayed on each blog page.',RW_MultiInstanz_Navigation::get_textdomain()) ; ?>
+            <?php
+
+        }
+        add_settings_field(
+	        'headerbar',                                              // Option Index
+            __( 'Enable Header-Bar', RW_MultiInstanz_Navigation::get_textdomain() ),   // Label
+            'rw_checkbox_activate_header_bar_draw',                         // function to draw HTML Input
+            'section_1',                                            // section slug
+            'rw-multiinstanz-navigation-setting-page'               // id der setting page
+        );
+
+
+
         function rw_checkbox_loginbutton_draw(  ) {
 
             $optname = 'loginbutton';
@@ -89,22 +111,56 @@ class RW_MultiInstanz_Navigation_Settings {
 
         /* --- Textfield ----- */
 
-        function rw_textfield_draw(  ) {
+        function rw_bp_url_draw(  ) {
 
             $option='buddypress-url';
             $options = RW_MultiInstanz_Navigation_Settings::$options;
             ?>
-            <input class="rw-multiinstanz-navigation-option-textfield" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name.'['.$option.']'; ?>' value='<?php echo $options[$option]; ?>'>
+            <input style="width:400px;" class="rw-multiinstanz-navigation-option-textfield" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name.'['.$option.']'; ?>' value='<?php echo $options[$option]; ?>'>
             <?php
         }
 
         add_settings_field(
 	        'buddypress-url',
             __( 'Url to Buddypress Instanz', RW_MultiInstanz_Navigation::get_textdomain() ),
-            'rw_textfield_draw',
+            'rw_bp_url_draw',
             'section_1',
             'rw-multiinstanz-navigation-setting-page'
         );
+
+        function rw_rpi_button_doms_elector_draw(  ) {
+
+            $option='selector';
+            $options = RW_MultiInstanz_Navigation_Settings::$options;
+            ?>
+            <input style="width:400px;" class="rw-multiinstanz-navigation-option-textfield" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name.'['.$option.']'; ?>' value='<?php echo $options[$option]; ?>'><br>
+            specify a jQuery.Selector (z.B.:  '.right-col .header-notifications.notifications' or '#navelem' ), where to put the rpi-button before
+            <?php
+        }
+
+        add_settings_field(
+            'selector',
+            __( 'rpi Button Target', RW_MultiInstanz_Navigation::get_textdomain() ),
+            'rw_rpi_button_doms_elector_draw',
+            'section_1',
+            'rw-multiinstanz-navigation-setting-page'
+        );
+
+/*
+        $select_options[] = array( 'news' => 'fa-rss' );
+        $select_options[] = array( 'blogs' => '' );
+        $select_options[] = array( 'material' => '' );
+        $select_options[] = array( 'relilex' => '' );
+        $select_options[] = array( 'reformation' => '' );
+        $select_options[] = array( 'support' => 'fa-wrench' );
+        $select_options[] = array( 'gruppen' => '' );
+        $select_options[] = array( 'kurse' => '' );
+        $select_options[] = array( 'arthotek' => '' );
+        $select_options[] = array( 'h5p' => '' );
+        $select_options[] = array( 'tvtipps' => '' );
+        $select_options[] = array( 'relipuls' => '' );
+        $select_options[] = array( 'openreli' => '' );
+*/
 
 
         /* --- Selectbox ----- */
@@ -115,7 +171,7 @@ class RW_MultiInstanz_Navigation_Settings {
 
             $pages = get_pages();
             foreach ( $pages as $page ) {
-                $selected = ($options['option3'] == $page->ID)? ' selected':'';
+                $selected = ($options['service'] == $page->ID)? ' selected':'';
                 $select_option = '<option value="' . $page->ID  . '"'.$selected.'>';
                 $select_option .= $page->post_title;
                 $select_option .= '</option>';

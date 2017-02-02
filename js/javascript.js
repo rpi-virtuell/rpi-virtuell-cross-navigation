@@ -14,22 +14,25 @@ jQuery(document).ready(function($){
     });
 
     $("#more-rpi-container-dialog").dialog({
+        width: 400,
         autoOpen: false,
         dialogClass: "rpi-header-dialog",
         modal: false,
         responsive: true,
         show: {
-            effect: "slideDown",
+            effect: "fadeIn",
             duration: 250
         },
         hide: {
-            effect: "slideUp",
+            effect: "fadeOut",
             duration: 250
         },
         position:{
-            at: "left bottom",
-            of: $('#rpi-services-button')
-        }
+            my: "right top-0",
+            at: "right top+70",
+            of: $('#rw-mn')
+        },
+        draggable: false,
     });
 
     $.ajax({

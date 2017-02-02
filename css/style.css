@@ -5,6 +5,45 @@
  * @link      https://github.com/rpi-virtuell/rw-multiinstanz-navigation
  */
 
+/*****************************************************************************/
+/* wpadminbar */
+#wpadminbar{
+    background-color: #256C8C;
+}
+#wp-admin-bar-my-account{
+    opacity: 0;
+}
+/* mehr von rpi-virtuell */
+#more-rpi-container-dialog { display: none; }
+.rpi-header-dialog{
+    margin-right:0px;
+    background-color: #337A9A!important;
+    border: none!important;
+
+}
+
+.rpi-header-dialog .ui-dialog-titlebar{
+    background: #EDEDED !important;
+    border: none !important;
+    color:#337A9A;
+    border-radius: 0;
+}
+.rpi-header-dialog div.rpi-container-dialog-content{
+    color: snow;
+}
+.rpi-header-dialog .ui-button .ui-icon{
+    background: #337A9A none;
+    border-radius: 50%;
+
+}
+.rpi-header-dialog button.ui-button{
+    border:0px;
+    border-radius: 50%;
+}
+
+/*****************************************************************************/
+/* header bar */
+
 #rw-mn{
     position: relative;
     background-color: #337A9A;
@@ -22,7 +61,7 @@
     display: flex;
     flex-flow: nowrap;
     min-width: 400px;
-    height: 65px;
+    height: 70px;
     max-width: 100%;
 }
 #rw-mn .rpi-left-col{
@@ -32,6 +71,10 @@
 #rw-mn .rpi-center-col{
     flex: 1 0px;
     position: relative;
+
+}
+#rw-mn .rpi-right-col{
+    flex: 0 400px;
 
 }
 
@@ -51,141 +94,189 @@
         display: none;
     }
 }
-#rw-mn .rpi-right-col{
-    flex: 0 350px;
 
-}
+/*****************************************************************************/
+/* left col logo */
+
 #rw-mn .rpi-header-logo{
     line-height: 1;
     background-position: 0 -16px!important;
-    height: 65px;
-}
-#rw-mn .rpi-header-logo p{
-    float:right;
-    width: 215px;
+    height: 70px;
+    display: flex;
+    flex-flow: nowrap;
+    width:100%;
     overflow: hidden;
+}
+#rw-mn .rpi-header-logo .rpi-header-blogname{
+    flex: 1;
     color:snow;
-    padding: 15px 0 0 30px;
-    font-family: "Arial Black";
-    font-size: 30px;
+    padding: 30px 0 0 20px;
+    font-family: Times;
+    font-size: 20px;
     text-transform: uppercase;
     line-height: 1.5;
 }
 #rw-mn .rpi-header-logo img{
-    height: 50px;
-    opacity:0;
+    height: 62px;
+    opacity:1;
+    flex:0 ;
+    margin:5px;
+}
+
+/*****************************************************************************/
+/* center col */
+
+#rw-mn .rw-search-wrapper{
+    display: flex;
+    flex-flow: nowrap;
+    min-width: 200px;
+    max-width: 100%;
+    height: 70px;
+    overflow: hidden;
+    border: none;
+}
+#rw-mn .rw-search-wrapper input{
+    flex: 1;
+    border: none;
+    border-radius: 0;
+    background-color: gainsboro;
+}
+#rw-mn .rw-search-wrapper button {
+    flex: 0 65;
+    height: 70px;
+    border: none;
+    border-radius: 0;
+    background-color: #00A6DC;
+    font-size: 20px;
+    padding: 0 25px;
+}
+#rw-mn #searchsubmit:hover{
+    background-color: #059BC4;
+}
+
+#rw-mn .rpi-center-col .header-navigation li {
+    font-size: 11px;
 }
 
 
-#rw-mn div.rpi-header-button:hover{
-    background-color: #008EBC ;
+/* right col */
+#rw-mn .rpi-right-col .header-navigation{
+    width:100%;
+    display: block;
+    height:70px;
+    overflow: hidden;
 }
-#rw-mn .rpi-center-col .header-navigation{
-    margin-top: -15px;
-    float:right;
-}
-
-#rw-mn .rpi-right-col .header-navigation ul{
+#rw-mn .rpi-right-col ul{
     margin: 0;
+
 }
 #rw-mn .header-navigation ul{
     list-style: none;
 
 }
-#rw-mn .header-navigation li{
-    float: left;
-    padding-left: 15px;
-}
-#rw-mn .rpi-center-col .header-navigation li {
-    font-size: 11px;
-}
+/* not logged in vistors */
 
-#rw-mn .rpi-right-col .header-navigation{
+#rw-mn .rpi-right-col ul.rpi-header-signon{
     width:100%;
-    display: block;
-    height:65px;
-    overflow: hidden;
+    display: flex;
+    flex-flow: nowrap;
+    height: 70px;
+    padding-right: 29px;
+    justify-content: space-between;
+}
+#rw-mn .rpi-right-col ul.rpi-header-signon .rpi-header-services{
+    flex: 1;
+}
+#rw-mn .rpi-right-col ul.rpi-header-signon .register-button{
+    flex: 0 30%;
+    margin-top: 25px;
+}
+#rw-mn .rpi-right-col ul.rpi-header-signon .login-button{
+    flex: 0 30%;
+    margin-top: 25px;
 }
 
-#rw-mn .rpi-header-button{
+.rpi-header-services {
+    margin: 20px 21px 0;
+}
+
+a#rpi-services-button {
+    display: block;
+    width: 42px;
+    height: 39px;
+}
+
+
+#rw-mn .rpi-header-button a{
     width: auto;
     text-align: center;
     padding: 3px 20px;
     background-color: #00A6DC;
-    margin:19px;
     border-radius: 3px;
-    margin: 20px 6px auto auto;
-}
-#rw-mn .rpi-header-button a{
-    color: #ffffff;
     display: block;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 12px;
+    margin: 0 10px;
 }
-
-#rw-mn .rpi-header-account{
-    float: right;;
+#rw-mn .rpi-header-button a:hover{
+    background-color: #008EBC !important;
+    text-decoration: none !important;
+    color: #ffffff;
 }
 
 #rw-mn .rpi-header-account li.icon-button{
-    padding: 10px 20px;
-    font-size: 30px;
+    padding: 20px 20px;
+    font-size: 23px;
+}
+
+
+/* logged in users */
+
+#rw-mn .rpi-right-col ul.rpi-header-account{
+    width:100%;
+    display: flex;
+    flex-flow: nowrap;
+    height: 70px;
+    padding-right: 29px;
+}
+
+#rw-mn .rpi-right-col ul.rpi-header-account .rpi-header-services{
+    flex: 0 50px;
+}
+#rw-mn .rpi-right-col ul.rpi-header-account .rpi-header-notifications{
+    flex: 0 50px;
+}
+#rw-mn .rpi-right-col ul.rpi-header-account .rpi-header-avatar{
+    flex: 1;
+    display: flex;
+    flex-flow: nowrap;
+}
+#rw-mn .rpi-right-col .rpi-header-avatar .rpi-user-name{
+    flex: 1;
+    text-align: right;
+    line-height: 11px;
+    margin-top: 15px;
+}
+#rw-mn .rpi-right-col .rpi-header-avatar .rpi-user-avatar{
+    flex: 0 55px
 }
 
 #rw-mn .rpi-header-avatar{
-    width:110px;
-    height:80px;
-    position:relative;
+    margin-top: 10px;
 }
-#rw-mn .rpi-user-url {
-    position: absolute;
-    top: 46px;
-    font-size: 10px;
+#rw-mn .rpi-user-name span{
+    font-size:12px;
 }
-
 #rw-mn #rpi-user-avatar img{
     border-radius:50%;
     width:50px;
     margin-left: 10px;
 }
 
-.rpi-header-services {
-    width: 55px;
-    height: 50px;
-    margin: 10px 20px 0;
-}
 
-a#rpi-services-button{
-    display:block;
-    width:55px;
-    height:55px;
-
-}
-
-#more-rpi-container-dialog { display: none; }
-
-a.rpi-notification-link{
-    color:#c0c0c0 !important;
-}
-.rpi-header-dialog{
-    margin-top:96px;
-    margin-right:185px;
-    background-color: #337A9A!important;
-    border: none!important;
-}
-
-.rpi-header-dialog .ui-dialog-titlebar{
-    background: #EDEDED !important;
-    border: none !important;
-    color:#337A9A;
-    border-radius: 0;
-}
-.rpi-header-dialog div.rpi-container-dialog-content{
-    color: snow;
-}
-.rpi-header-dialog .ui-button .ui-icon{
-    background: #F56800 none;
+#rw-mn a.rpi-notification-link.no-alert{
+    color:#92AAB5;
 }
 
 #rpi-header-dropdown, #rpi-left-menu-toggle, #rpi-pending-notifications{
