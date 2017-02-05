@@ -32,7 +32,7 @@ function rw_multiinstanz_navigation_header_action($post_object ) {
 
     endif;
 }
-add_action( 'wp_head', 'rw_multiinstanz_navigation_header_action' );
+add_action( 'pre_top_navigation', 'rw_multiinstanz_navigation_header_action' );
 
 
 function rw_multiinstanz_navigation_footer_action(){
