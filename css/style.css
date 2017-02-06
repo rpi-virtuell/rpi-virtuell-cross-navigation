@@ -31,6 +31,10 @@
 .admin-bar #more-rpi-container-sidebar {
     margin-top: 101px;
 }
+.rpi-container-sidebar-content{
+    font-family: "Cairo","Open Sans",sans-serif;
+    font-size:15px;
+}
 .rpi-container-sidebar-content ul{
     list-style: none;
     line-height: 1.7;
