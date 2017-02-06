@@ -23,10 +23,13 @@
     background: #256C8C;
     color: #fff;
     z-index: 50;
-    margin-top: 101px;
+    margin-top: 70px;
     padding:1%;
     min-width: 300px;
     display: none;
+}
+.admin-bar #more-rpi-container-sidebar {
+    margin-top: 101px;
 }
 .rpi-container-sidebar-content ul{
     list-style: none;
@@ -132,7 +135,7 @@
 #rw-mn .rpi-header-logo img{
     height: 62px;
     opacity:1;
-    flex:0 ;
+    flex:0 70px;
     margin:5px;
 
 }
@@ -156,7 +159,7 @@
     background-color: gainsboro;
 }
 #rw-mn .rw-search-wrapper button {
-    flex: 0 65;
+    flex: 0 20px;
     height: 70px;
     border: none;
     border-radius: 0;
@@ -209,9 +212,8 @@
 
 }
 #rw-mn .rpi-right-col ul.rpi-header-signon .login-button{
-    flex: 1;
+    flex: 50%;
     margin-top: 25px;
-    max-width: 120px;
     float: right;
 }
 
