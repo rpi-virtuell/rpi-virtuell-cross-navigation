@@ -19,6 +19,27 @@ jQuery(document).ready(function($){
     });
 
     /**
+     * menu
+     */
+    $('nav li ul').hide().removeClass('fallback');
+    $('nav li').hover(
+        function () {
+            $('ul', this).stop().slideDown(100);
+        },
+        function () {
+            $('ul', this).stop().slideUp(100);
+        }
+    );
+
+    /**
+     * sdminbar User-Menu unter User-Bild einbauen
+     */
+    if(jQuery('#wp-admin-bar-user-actions')){
+        jQuery('#wp-admin-bar-user-actions').children().insertBefore('#rpi-header-menu');
+        jQuery('#wp-admin-bar-user-info').remove();
+        jQuery('#wp-admin-bar-logout').remove();
+    }
+    /**
      * checken ob der vom loginserver übergebende user "reliwerk_cas_user_account" auf dieser Instanz existiert
      * ggf. Anmelden
      */
@@ -70,8 +91,7 @@ jQuery(document).ready(function($){
         }
     });
 
-    jQuery('.rw-search-wrapper input#s').attr('name','fwp_suche');
-    jQuery('.rw-search-wrapper input form').attr('action','/facettierte-suche/');
-    
+
+
 });
 

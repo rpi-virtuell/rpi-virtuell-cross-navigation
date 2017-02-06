@@ -19,15 +19,9 @@
                              <!--style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/blogs.png') no-repeat 10px center; background-size: 50px"-->
                             <?php //echo get_bloginfo('name');?>
                             <!-- mehr rpi-virtuell -->
-
                                 <a id="rpi-services-button" href="#mehr-rpi-virtuell">
                                     Unsere Dienste <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
                                 </a>
-
-
-                            <span>
-                            Netzwerk
-                            </span>
                         </div>
                     </div><!--.header-links-->
 
@@ -60,7 +54,7 @@
                                 <?php endif;?>
 
                         </ul>
-                        <?php else: $user=wp_get_current_user();?>
+                        <?php else: $user=wp_get_current_user();?><nav>
                         <ul class="rpi-header-account">
                             <!-- Notification -->
                             <li class="rpi-header-notifications icon-button">
@@ -70,14 +64,22 @@
                             </li>
 
                             <li class="rpi-header-avatar">
+
                                 <div class="rpi-user-name"><span id="rpi-user-name" class="name"></span></div>
                                 <div id="rpi-user-avatar"></div>
+                                <ul class="fallback">
+                                    <li id="rpi-header-menu" class="rpi-header-menu">
+                                        <a href="<?php echo wp_logout_url(); ?>">
+                                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                            <span>Abmelden</span>
+                                        </a>
+                                    </li>
+                                </ul>
 
                             </li>
-                            <!--<li id="rpi-header-menu" class="rpi-header-menu">
-                                <a href="<?php echo wp_logout_url(); ?>">Logout</a>
-                            </li>-->
-                        </ul>
+
+
+                        </ul></nav>
                         <?php endif;?>
                     </div>
                 </div>

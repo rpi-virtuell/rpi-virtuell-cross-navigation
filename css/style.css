@@ -52,6 +52,8 @@
     height: calc(100vh - 65px )!important;
 }
 
+
+
 /*****************************************************************************/
 /* header bar */
 
@@ -205,26 +207,15 @@
 
 }
 #rw-mn .rpi-right-col ul.rpi-header-signon .register-button{
-    flex: 50%;
+    flex: 40%;
     margin-top: 25px;
     text-align: right;
-    max-width: 150px;
 
 }
 #rw-mn .rpi-right-col ul.rpi-header-signon .login-button{
-    flex: 50%;
+    flex: 40%;
     margin-top: 25px;
     float: right;
-}
-
-.rpi-header-services {
-    margin: 20px 21px 0;
-}
-
-a#rpi-services-button {
-    display: block;
-    height: 39px;
-    font-size: 2vh;
 }
 
 
@@ -287,7 +278,7 @@ a#rpi-services-button {
     margin-top: 10px;
 }
 #rw-mn .rpi-user-name span{
-    font-size:12px;
+    font-size:0.85em;
 }
 #rw-mn #rpi-user-avatar img{
     border-radius:50%;
@@ -303,4 +294,31 @@ a#rpi-services-button {
 #rpi-header-dropdown, #rpi-left-menu-toggle, #rpi-pending-notifications{
     display:none;
 
+}
+
+nav ul li ul {
+    position: absolute;
+    background: #256C8C;
+    top: 69px;
+    right: 0px;
+    z-index: 8;
+}
+nav ul li ul li {
+    width:200px;
+}
+nav ul li ul li a {
+    border-top: 1px solid #337A9A;
+    display:block;
+    padding:10px 10px;
+    color:#444;
+    font-size: 0.850rem;
+}
+nav ul li ul li:hover a {
+    background:#00A6DC;
+}
+nav ul li ul.fallback {
+    display:none;
+}
+nav ul li:hover ul.fallback {
+    display:block;
 }
