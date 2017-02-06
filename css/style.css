@@ -14,40 +14,53 @@
     opacity: 0;
 }
 /* mehr von rpi-virtuell */
-#more-rpi-container-dialog { display: none; }
-.rpi-header-dialog{
-    margin-right:0px;
-    background-color: #337A9A!important;
-    border: none!important;
-
+#more-rpi-container-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    background: #256C8C;
+    color: #fff;
+    z-index: 50;
+    margin-top: 101px;
+    padding:1%;
+    min-width: 300px;
+    display: none;
 }
-
-.rpi-header-dialog .ui-dialog-titlebar{
-    background: #EDEDED !important;
-    border: none !important;
-    color:#337A9A;
-    border-radius: 0;
+.rpi-container-sidebar-content ul{
+    list-style: none;
+    line-height: 1.7;
 }
-.rpi-header-dialog div.rpi-container-dialog-content{
-    color: snow;
+.rpi-container-sidebar-content span{
+    margin-left: 10px;
 }
-.rpi-header-dialog .ui-button .ui-icon{
-    background: #337A9A none;
-    border-radius: 50%;
-
+.rpi-container-sidebar-content a{
+    color:#dcdcdc;
 }
-.rpi-header-dialog button.ui-button{
-    border:0px;
-    border-radius: 50%;
+.rpi-container-sidebar-content a:hover{
+    color:white;
+}
+/** twenty seven **/
+.home.admin-bar .custom-header-media{
+    height: calc(100vh - 97px )!important;
+}
+.home .custom-header-media {
+    height: calc(100vh - 65px )!important;
 }
 
 /*****************************************************************************/
 /* header bar */
 
-#rw-mn{
-    position: relative;
+#rw-mn {
+    position: fixed;
     background-color: #337A9A;
-    z-index: 1;
+    z-index: 4;
+    width: 100%;
+}
+#rw-mn-shadow{
+    height:65px;
+    width:100%;
 }
 #rw-mn, #rw-mn a{
     color:snow;
@@ -65,8 +78,8 @@
     max-width: 100%;
 }
 #rw-mn .rpi-left-col{
-    flex: 0 280px;
-
+    flex: 0 20%;
+    min-width: 250px;
 }
 #rw-mn .rpi-center-col{
     flex: 1 0px;
@@ -121,6 +134,7 @@
     opacity:1;
     flex:0 ;
     margin:5px;
+
 }
 
 /*****************************************************************************/
@@ -185,15 +199,20 @@
     justify-content: space-between;
 }
 #rw-mn .rpi-right-col ul.rpi-header-signon .rpi-header-services{
-    flex: 1;
+
 }
 #rw-mn .rpi-right-col ul.rpi-header-signon .register-button{
-    flex: 0 30%;
+    flex: 50%;
     margin-top: 25px;
+    text-align: right;
+    max-width: 150px;
+
 }
 #rw-mn .rpi-right-col ul.rpi-header-signon .login-button{
-    flex: 0 30%;
+    flex: 1;
     margin-top: 25px;
+    max-width: 120px;
+    float: right;
 }
 
 .rpi-header-services {
@@ -202,8 +221,8 @@
 
 a#rpi-services-button {
     display: block;
-    width: 42px;
     height: 39px;
+    font-size: 2vh;
 }
 
 

@@ -7,33 +7,22 @@
 
 jQuery(document).ready(function($){
 
-    $("#rpi-services-button").toggle(function () {
-        $("#more-rpi-container-dialog").dialog('open');
-    },function () {
-        $("#more-rpi-container-dialog").dialog('close');
+    //mehr von rpi-virtuell dienste sidebar
+
+    $("#more-rpi-container-sidebar").css('display','block')
+    $("#more-rpi-container-sidebar").sidebar();
+    $("#rpi-services-button").on("click", function () {
+
+
+        $("#more-rpi-container-sidebar").trigger("sidebar:toggle");
+        return false;
     });
 
-    $("#more-rpi-container-dialog").dialog({
-        width: 400,
-        autoOpen: false,
-        dialogClass: "rpi-header-dialog",
-        modal: false,
-        responsive: true,
-        show: {
-            effect: "fadeIn",
-            duration: 250
-        },
-        hide: {
-            effect: "fadeOut",
-            duration: 250
-        },
-        position:{
-            my: "right top-0",
-            at: "right top+70",
-            of: $('#rw-mn')
-        },
-        draggable: false,
-    });
+    /**
+     * checken ob der vom loginserver übergebende user "reliwerk_cas_user_account" auf dieser Instanz existiert
+     * ggf. Anmelden
+     */
+
 
     $.ajax({
         type: 'POST',
@@ -81,7 +70,8 @@ jQuery(document).ready(function($){
         }
     });
 
-
+    jQuery('.rw-search-wrapper input#s').attr('name','fwp_suche');
+    jQuery('.rw-search-wrapper input form').attr('action','/facettierte-suche/');
     
 });
 

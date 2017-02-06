@@ -26,13 +26,13 @@ function rw_multiinstanz_navigation_header_action($post_object ) {
     if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) ) :?>
         <div id="rw-mn">
               <?php include(  apply_filters('rw_rpi_navi_template_filter','rpi-header.php')  );?>
-        </div><?php
+        </div><div id="rw-mn-shadow"></div><?php
     else:
         include(  apply_filters('rw_rpi_service_button_template_filter','boss-button.php')  );
 
     endif;
 }
-add_action( 'pre_top_navigation', 'rw_multiinstanz_navigation_header_action' );
+add_action( 'wp_head', 'rw_multiinstanz_navigation_header_action' );
 
 
 function rw_multiinstanz_navigation_footer_action(){

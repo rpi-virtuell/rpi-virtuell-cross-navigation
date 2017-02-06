@@ -17,7 +17,17 @@
                         <img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png">
                         <div class="rpi-header-blogname" >
                              <!--style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/blogs.png') no-repeat 10px center; background-size: 50px"-->
-                            <span>blogs<?php //echo get_bloginfo('name');?></span>
+                            <?php //echo get_bloginfo('name');?>
+                            <!-- mehr rpi-virtuell -->
+
+                                <a id="rpi-services-button" href="#mehr-rpi-virtuell">
+                                    Unsere Dienste <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                                </a>
+
+
+                            <span>
+                            Netzwerk
+                            </span>
                         </div>
                     </div><!--.header-links-->
 
@@ -36,16 +46,14 @@
 
                         <?php if(!is_user_logged_in()):?>
                         <ul class="rpi-header-signon">
-                            <li class="rpi-header-services">
-                                <a id="rpi-services-button" style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-button.png') no-repeat; background-size: contain"
-                                   href="#rpi-virtuell"></a>
-                            </li>
                             <?php if ( RW_MultiInstanz_Navigation_Settings::get( 'loginbutton' ) ) :?>
-                                <?php if ( get_option( 'users_can_register' ) ) :?>
-                                    <li class="rpi-header-button register-button">
+                                <li class="rpi-header-button register-button">
+                                    <?php if ( get_option( 'users_can_register' ) ) :?>
+
                                         <a href="<?php echo wp_registration_url();?>" title="Registrieren">Registrieren</a>
-                                    </li>
-                                <?php endif;?>
+
+                                    <?php endif;?>
+                                </li>
                                 <li class="rpi-header-button login-button">
                                     <a href="<?php echo wp_login_url(); ?>" title="Anmelden">Anmelden</a>
                                 </li>
@@ -54,11 +62,6 @@
                         </ul>
                         <?php else: $user=wp_get_current_user();?>
                         <ul class="rpi-header-account">
-                            <!-- mehr rpi-virtuell -->
-                            <li class="rpi-header-services">
-                                <a id="rpi-services-button" style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/ci-rpi-button.png') no-repeat; background-size: contain"
-                                   href="#rpi-virtuell"></a>
-                            </li>
                             <!-- Notification -->
                             <li class="rpi-header-notifications icon-button">
                                 <a class="rpi-notification-link fa fa-bell no-alert" href="http://gruppen.rpi-virtuell.de/members/<?php echo $user->user_login; ?>/notifications/">
