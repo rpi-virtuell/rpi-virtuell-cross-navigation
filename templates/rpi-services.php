@@ -11,7 +11,7 @@
         <p class="rpi-container-sidebar-title">Dienste und Angebote von rpi-virtuell</p>
         <ul>
             <li>
-                <a href="">
+                <a href="http://news.rpi-virtuell.de/">
                     <i class="fa fa-newspaper-o"></i>
                     <span class="service-label">
                         News (Bildungsnachrichten)
@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://blogs.rpi-virtuell.de/artothek">
                     <i class="fa fa-picture-o"></i>
                     <span class="service-label">
                         Artothek (Kunst-Ausstellungen)
@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://material.rpi-virtuell.de/">
                     <i class="fa fa-search"></i>
                     <span class="service-label">
                         Materialpool (freie Bildungsmedien)
@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://gruppen.rpi-virtuell.de/">
                     <i class="fa fa-users"></i>
                     <span class="service-label">
                         Gruppen (Soziales Netzwerk)
@@ -43,7 +43,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://blogs.rpi-virtuell.de/">
                     <i class="fa fa-pencil-square-o"></i>
                     <span class="service-label">
                         Blogs (Eigene Webseiten erstellen)
@@ -51,7 +51,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://kurse.rpi-virtuell.de/">
                     <i class="fa fa-university"></i>
                     <span class="service-label">
                         Kurse ( Lernmanagemenstsystem )
@@ -59,7 +59,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://relilex.de/">
                     <i class="fa fa-book"></i>
                     <span class="service-label">
                         relilex (Lexikon Religion)
@@ -67,7 +67,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://openreli.de/">
                     <i class="fa fa-graduation-cap"></i>
                     <span class="service-label">
                         openreli ( offener Online Kurs )
@@ -75,15 +75,15 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://blogs.rpi-virtuell.de/reformation">
                     <i class="fa fa-hand-lizard-o"></i>
                     <span class="service-label">
-                        Reformation (Praxistipps)
+                        Reformation 2017 (Praxistipps)
                     </span>
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://blogs.rpi-virtuell.de/tvtipps">
                     <i class="fa fa-television"></i>
                     <span class="service-label">
                         TV- Tipps (für Unterrichtende)
@@ -91,7 +91,7 @@
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="http://support.rpi-virtuell.de/tvtipps">
                     <i class="fa fa-question-circle"></i>
                     <span class="service-label">
                         Support (Wir helfen gerne!)
@@ -100,7 +100,7 @@
             </li>
             <li><hr></li>
             <li>
-                <a href="">
+                <a href="http://about.rpi-virtuell.de/tvtipps">
                     <i class="fa fa-info-circle"></i>
                     <span class="service-label">
                         Noch mehr über rpi-virtuell
