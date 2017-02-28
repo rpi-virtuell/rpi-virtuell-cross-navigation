@@ -34,7 +34,7 @@ jQuery(document).ready(function($){
     /**
      * sdminbar User-Menu unter User-Bild einbauen
      */
-    if(jQuery('#wp-admin-bar-user-actions')){
+    if(jQuery('body.wp-admin').length==0 && jQuery('#wp-admin-bar-user-actions').length>0){
         jQuery('#wp-admin-bar-user-actions').children().insertBefore('#rpi-header-menu');
         jQuery('#wp-admin-bar-user-info').remove();
         jQuery('#wp-admin-bar-logout').remove();
