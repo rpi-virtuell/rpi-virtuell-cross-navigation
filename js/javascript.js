@@ -7,6 +7,42 @@
 
 jQuery(document).ready(function($){
 
+    if(jQuery('#wpadminbar').length!=0 && jQuery('body.wp-admin').length==0){
+        jQuery('html').attr('style', 'margin-top: 100px !important');
+        jQuery('.navbar-default').css('margin-top','100px');
+        jQuery('#rw-mn').css('top','32px');
+    }else if(jQuery('body.wp-admin').length==0){
+        jQuery('html').attr('style', 'margin-top: 70px');
+        jQuery('.navbar-default').css('margin-top','70px');
+    }
+
+    /**
+     * DIVI Hack
+     */
+
+    if(jQuery('body.et_divi_theme').length>0){
+        function setdiviheader(){
+            if(jQuery('#wpadminbar').length!=0 && jQuery('body.wp-admin').length==0){
+                jQuery('body.et_divi_theme #page-container header#main-header').attr('style', 'top: 100px');
+            }else if(jQuery('body.wp-admin').length==0){
+                jQuery('body.et_divi_theme #page-container header#main-header').attr('style', 'top: 70px');
+            }
+        }
+
+        jQuery(document).on('scroll', setdiviheader);
+        jQuery(document).on('load', setdiviheader);
+        jQuery(document).on('resize', setdiviheader);
+
+        setTimeout(setdiviheader, 1000);
+    }
+
+
+
+    jQuery('#rw-mn #searchsubmit').on('mouseover', function () {
+        var inp = jQuery('#rw-mn .rw-search-wrapper input')[0];
+        inp.focus();
+    })
+    
     //mehr von rpi-virtuell dienste sidebar
 
     $("#more-rpi-container-sidebar").css('display','block')

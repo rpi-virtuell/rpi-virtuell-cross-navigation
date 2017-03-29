@@ -5,6 +5,9 @@
  * @link      https://github.com/rpi-virtuell/rw-multiinstanz-navigation
  */
 
+
+@import url(http://fonts.googleapis.com/css?family=Imprima|Oswald|Imprima);
+
 /*****************************************************************************/
 /* wpadminbar */
 #wpadminbar{
@@ -22,9 +25,9 @@
     width: 20%;
     background: #256C8C;
     color: #fff;
-    z-index: 50;
+    z-index: 100001;
     margin-top: 70px;
-    padding:1%;
+    padding:0;
     min-width: 300px;
     display: none;
 }
@@ -32,8 +35,9 @@
     margin-top: 101px;
 }
 .rpi-container-sidebar-content{
-    font-family: "Cairo","Open Sans",sans-serif;
+    font-family: "Imprima","Open Sans",sans-serif;
     font-size:15px;
+    margin:3%;
 }
 .rpi-container-sidebar-content ul{
     list-style: none;
@@ -63,20 +67,27 @@
 
 #rw-mn {
     position: fixed;
+    top:0;
+    left:0;
     background-color: #337A9A;
-    z-index: 4;
+    z-index: 100001;
     width: 100%;
+    font-family: "Imprima","Open Sans",sans-serif;
+    border:0;
+    border-bottom: 1px solid #444;
 }
 #rw-mn-shadow{
     height:65px;
     width:100%;
+    display: none;
 }
 #rw-mn, #rw-mn a{
     color:snow;
+    text-decoration: none;
 }
 #rw-mn a:hover{
-    color:lightgoldenrodyellow;
-    text-decoration: underline;
+    color:orange;
+    /*text-decoration: underline;*/
 }
 
 #rw-mn .rpi-header{
@@ -117,6 +128,10 @@
     }
 }
 
+
+#rw-mn [class*=" icon-"]{
+    background-image: none !important;
+}
 /*****************************************************************************/
 /* left col logo */
 
@@ -133,7 +148,7 @@
     flex: 1;
     color:snow;
     padding: 30px 0 0 20px;
-    font-family: Times;
+    font-family: "Imprima","Open Sans",sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     line-height: 1.5;
@@ -143,7 +158,6 @@
     opacity:1;
     flex:0 70px;
     margin:5px;
-
 }
 
 /*****************************************************************************/
@@ -163,6 +177,11 @@
     border: none;
     border-radius: 0;
     background-color: gainsboro;
+    height: 70px;
+    font-size: 28px;
+    padding: 0 20px;
+    margin: 0;
+    background-image: none;
 }
 #rw-mn .rw-search-wrapper button {
     flex: 0 20px;
@@ -172,15 +191,28 @@
     background-color: #00A6DC;
     font-size: 20px;
     padding: 0 25px;
+    min-width: 70px;
+    background-position: center center;
+}
+#rw-mn .rw-search-wrapper button i{
+    color: white;
+}
+#rw-mn #searchsubmit{
+    background-size: 20px;
+    right:0;
 }
 #rw-mn #searchsubmit:hover{
-    background-color: #059BC4;
+    background-size: 24px;
 }
-
+#rw-mn .rw-search-wrapper label{
+    display: none;
+}
 #rw-mn .rpi-center-col .header-navigation li {
     font-size: 11px;
 }
-
+#rw-mn form {
+    margin:0 !important;
+}
 
 /* right col */
 #rw-mn .rpi-right-col .header-navigation{
@@ -272,7 +304,7 @@
     flex: 1;
     text-align: right;
     line-height: 11px;
-    margin-top: 15px;
+    margin-top: 21px;
 }
 #rw-mn .rpi-right-col .rpi-header-avatar .rpi-user-avatar{
     flex: 0 55px
@@ -282,12 +314,17 @@
     margin-top: 10px;
 }
 #rw-mn .rpi-user-name span{
-    font-size:0.85em;
+    font-size:0.95em;
 }
+#rw-mn #rpi-user-avatar{
+    margin-right: 20px;
+}
+
 #rw-mn #rpi-user-avatar img{
     border-radius:50%;
     width:50px;
-    margin-left: 10px;
+    margin-left: 15px;
+    height: auto;
 }
 
 
@@ -306,6 +343,7 @@ nav ul li ul {
     top: 69px;
     right: 0px;
     z-index: 8;
+    text-align: left;
 }
 nav ul li ul li {
     width:200px;
@@ -315,7 +353,7 @@ nav ul li ul li a {
     display:block;
     padding:10px 10px;
     color:#444;
-    font-size: 0.850rem;
+    font-size: 0.950rem;
 }
 nav ul li ul li:hover a {
     background:#00A6DC;
@@ -325,4 +363,14 @@ nav ul li ul.fallback {
 }
 nav ul li:hover ul.fallback {
     display:block;
+}
+
+
+
+/******************************************************************************************/
+#tc-page-wrap .tc-header, #tc-sn{
+    top: 100px!important;
+}
+#page-container header#main-header{
+    top: 100px;
 }

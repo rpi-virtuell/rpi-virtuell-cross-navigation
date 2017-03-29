@@ -149,13 +149,13 @@ class RW_MultiInstanz_Navigation {
         //@TODO uncomment what you need
 
         //enable and load css and js files
-         add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_style' ) );
-         add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
+         add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_style' ) ,9999);
+         add_action( 'wp_enqueue_scripts',       array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) ,9999);
 
          do_action( 'rw_multiinstanz_navigation_enqueue' );
 
         //enable ajax
-        add_action( 'admin_enqueue_scripts',    array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) );
+        add_action( 'admin_enqueue_scripts',    array( 'RW_MultiInstanz_Navigation_Core','enqueue_js' ) ,9999);
         add_action( 'wp_ajax_rw_multiinstanz_navigation_core_ajaxresponse' ,array( 'RW_MultiInstanz_Navigation_Core','ajaxresponse' )  );
 
         //because WordPress does not automatically do ajax actions for users not logged-in,we need this as workarround
