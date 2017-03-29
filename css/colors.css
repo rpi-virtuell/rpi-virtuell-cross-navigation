@@ -1,0 +1,36 @@
+#wpadminbar{
+    background-color: #256C8C;
+}
+#rw-mn {
+	background-color: #337A9A;
+}
+#rw-mn .rpi-header-button a{
+  background-color: #00A6DC;
+}
+#rw-mn .rpi-header-button a:hover{
+    background-color: #008EBC !important;
+    color: #ffffff;
+}
+
+#rw-mn .rw-search-wrapper button{
+	background-color: #00A6DC;
+}
+
+#more-rpi-container-sidebar{
+	background: #256C8C;
+}
+
+#rw-mn nav ul li ul{
+	background: #256C8C;
+}
+
+#rw-mn nav ul li ul li a{
+  border-top: 1px solid #337A9A;
+  color:#444;
+}
+#rw-mn nav ul li ul li:hover a {
+    background:#00A6DC;
+}
+#rw-mn a:hover{
+    color:orange;
+}
