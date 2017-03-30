@@ -16,12 +16,14 @@
                     <div class="rpi-header-logo">
                         <img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png">
                         <div class="rpi-header-blogname" >
-                             <!--style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/blogs.png') no-repeat 10px center; background-size: 50px"-->
-                            <?php //echo get_bloginfo('name');?>
+                            <!--style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/blogs.png') no-repeat 10px center; background-size: 50px"-->
+                            <?php echo get_bloginfo('name');?>
                             <!-- mehr rpi-virtuell -->
-                                <a id="rpi-services-button" href="#mehr-rpi-virtuell">
-                                    Unsere Dienste <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-                                </a>
+                        </div>
+                        <div class="rpi-header-more-rpi">
+                            <a id="rpi-services-button" href="#mehr-rpi-virtuell">
+                                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                            </a>
                         </div>
                     </div><!--.header-links-->
 

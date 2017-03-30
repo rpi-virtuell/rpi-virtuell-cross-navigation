@@ -1,36 +1,88 @@
 #wpadminbar{
-    background-color: #256C8C;
+    background-color: #093E5A;
+    z-index: 99999999;
 }
+#wp-admin-bar-my-account{
+    opacity: 0;
+}
+
+*{
+    font-family: "Cairo","Open Sans",sans-serif;
+}
+
 #rw-mn {
-	background-color: #337A9A;
+	background-color: #1B638A;
 }
-#rw-mn .rpi-header-button a{
-  background-color: #00A6DC;
-}
-#rw-mn .rpi-header-button a:hover{
-    background-color: #008EBC !important;
-    color: #ffffff;
+#rw-mn a:hover{
+    color: #EB8154;
 }
 
-#rw-mn .rw-search-wrapper button{
-	background-color: #00A6DC;
-}
+#rw-mn .rpi-header-logo .rpi-header-blogname{
+    font-family: "Oswald","Open Sans",sans-serif;
+    color:snow;
+    padding: 15px 0 0 20px;
+    font-size: 30px;
+    text-align: center;
 
-#more-rpi-container-sidebar{
-	background: #256C8C;
 }
+#rw-mn .rpi-header-blogname{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d95821+1,d95821+26,1b638a+26,1b638a+26,1b638a+100 */
+    background: #d95821; /* Old browsers */
+    background: -moz-linear-gradient(to top, #d95821 1%, #d95821 26%, transparent 26%, transparent 26%, transparent 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(to top, #d95821 1%,#d95821 26%,transparent 26%,transparent 26%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to top, #d95821 1%,#d95821 26%,transparent 26%,transparent 26%,transparent 100%) ; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d95821', endColorstr='transparent',GradientType=1 ); /* IE6-9 */
 
+}
+#more-rpi-container-sidebar {
+	background: #093E5A;
+}
+.rpi-container-sidebar-content a{
+    color:#dcdcdc;
+}
 #rw-mn nav ul li ul{
-	background: #256C8C;
+	background: #295268;
 }
 
 #rw-mn nav ul li ul li a{
   border-top: 1px solid #337A9A;
-  color:#444;
+  color:snow;
 }
 #rw-mn nav ul li ul li:hover a {
     background:#00A6DC;
 }
-#rw-mn a:hover{
-    color:orange;
+
+
+#rw-mn .rpi-header-more-rpi a{
+    background-color: #EB8154;
+    color: white;
+}
+#rw-mn .rpi-header-button a{
+    background-color: #EB8154;
+}
+#rw-mn .rw-search-wrapper button{
+    background-color: #EB8154;
+}
+
+#rw-mn .rw-search-wrapper button:hover{
+    background-color: #8E320B;
+}
+
+#rw-mn .rpi-header-more-rpi a:hover{
+    background-color: #8E320B;
+}
+#rw-mn .rpi-header-button a:hover{
+    background-color: #8E320B !important;
+    color: #ffffff;
+}
+#rw-mn .rw-search-wrapper button i{
+    color: #ffffff;
+}
+#rw-mn .rw-search-wrapper input{
+    background-color: snow;
+}
+
+
+#rw-mn a.rpi-notification-link.no-alert{
+    color:#92AAB5;
 }

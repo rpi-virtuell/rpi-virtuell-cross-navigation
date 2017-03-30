@@ -6,16 +6,10 @@
  */
 
 
-@import url(http://fonts.googleapis.com/css?family=Imprima|Oswald|Imprima);
+@import url(http://fonts.googleapis.com/css?family=Imprima|Oswald|Cairo);
+@import url(colors.css);
 
 /*****************************************************************************/
-/* wpadminbar */
-#wpadminbar{
-    background-color: #256C8C;
-}
-#wp-admin-bar-my-account{
-    opacity: 0;
-}
 /* mehr von rpi-virtuell */
 #more-rpi-container-sidebar {
     position: fixed;
@@ -23,7 +17,6 @@
     left: 0;
     bottom: 0;
     width: 20%;
-    background: #256C8C;
     color: #fff;
     z-index: 100001;
     margin-top: 70px;
@@ -35,7 +28,7 @@
     margin-top: 101px;
 }
 .rpi-container-sidebar-content{
-    font-family: "Imprima","Open Sans",sans-serif;
+    /*font-family: "Imprima","Open Sans",sans-serif;*/
     font-size:15px;
     margin:3%;
 }
@@ -46,9 +39,7 @@
 .rpi-container-sidebar-content span{
     margin-left: 10px;
 }
-.rpi-container-sidebar-content a{
-    color:#dcdcdc;
-}
+
 .rpi-container-sidebar-content a:hover{
     color:white;
 }
@@ -69,12 +60,10 @@
     position: fixed;
     top:0;
     left:0;
-    background-color: #337A9A;
     z-index: 100001;
     width: 100%;
-    font-family: "Imprima","Open Sans",sans-serif;
+    /*font-family: "Imprima","Open Sans",sans-serif;*/
     border:0;
-    border-bottom: 1px solid #444;
 }
 #rw-mn-shadow{
     height:65px;
@@ -86,7 +75,6 @@
     text-decoration: none;
 }
 #rw-mn a:hover{
-    color:orange;
     /*text-decoration: underline;*/
 }
 
@@ -146,19 +134,33 @@
 }
 #rw-mn .rpi-header-logo .rpi-header-blogname{
     flex: 1;
-    color:snow;
-    padding: 30px 0 0 20px;
-    font-family: "Imprima","Open Sans",sans-serif;
-    font-size: 20px;
-    text-transform: uppercase;
     line-height: 1.5;
+    text-transform: lowercase;
+
 }
 #rw-mn .rpi-header-logo img{
-    height: 62px;
+     height: 62px;
+     opacity:1;
+     flex:0 70px;
+     margin:5px;
+}
+#rw-mn .rpi-header-more-rpi{
+    height: 70px;
+    width:70px;
     opacity:1;
     flex:0 70px;
     margin:5px;
+
 }
+#rw-mn .rpi-header-more-rpi a{
+    display: block;
+    font-size: 22px;
+    height: 70px;
+    width: 100px;
+    padding: 25px 29px;
+    margin: -5px -10px auto auto;
+}
+
 
 /*****************************************************************************/
 /* center col */
@@ -176,7 +178,6 @@
     flex: 1;
     border: none;
     border-radius: 0;
-    background-color: gainsboro;
     height: 70px;
     font-size: 28px;
     padding: 0 20px;
@@ -188,15 +189,12 @@
     height: 70px;
     border: none;
     border-radius: 0;
-    background-color: #00A6DC;
     font-size: 20px;
     padding: 0 25px;
     min-width: 70px;
     background-position: center center;
 }
-#rw-mn .rw-search-wrapper button i{
-    color: white;
-}
+
 #rw-mn #searchsubmit{
     background-size: 20px;
     right:0;
@@ -259,7 +257,6 @@
     width: auto;
     text-align: center;
     padding: 3px 20px;
-    background-color: #00A6DC;
     border-radius: 3px;
     display: block;
     font-weight: bold;
@@ -268,7 +265,6 @@
     margin: 0 10px;
 }
 #rw-mn .rpi-header-button a:hover{
-    background-color: #008EBC !important;
     text-decoration: none !important;
     color: #ffffff;
 }
@@ -327,19 +323,12 @@
     height: auto;
 }
 
-
-#rw-mn a.rpi-notification-link.no-alert{
-    color:#92AAB5;
-}
-
 #rpi-header-dropdown, #rpi-left-menu-toggle, #rpi-pending-notifications{
     display:none;
-
 }
 
 nav ul li ul {
     position: absolute;
-    background: #256C8C;
     top: 69px;
     right: 0px;
     z-index: 8;
@@ -349,14 +338,9 @@ nav ul li ul li {
     width:200px;
 }
 nav ul li ul li a {
-    border-top: 1px solid #337A9A;
     display:block;
     padding:10px 10px;
-    color:#444;
     font-size: 0.950rem;
-}
-nav ul li ul li:hover a {
-    background:#00A6DC;
 }
 nav ul li ul.fallback {
     display:none;
