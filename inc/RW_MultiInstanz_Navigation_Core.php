@@ -57,9 +57,11 @@ class RW_MultiInstanz_Navigation_Core {
 
         $style = "";
 
+
+
         if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) ){
             switch (RW_MultiInstanz_Navigation_Settings::get('service')){
-                case 'material':
+                case 'materialpool':
                     $bg_main  = '#D95821';
                     $bg       = '#EB8154';
                     $bg_hover = '#8E320B';

@@ -200,6 +200,29 @@
 /*****************************************************************************/
 /* center col */
 
+#rw-mn #rpi-top-menu a{
+    color: #444;
+    font-weight: bold;
+}
+#rw-mn #rpi-top-menu a:hover{
+    color: #999;
+}
+#rw-mn #rpi-top-menu .current-menu-item a{
+    color: #999;
+}
+#rw-mn #rpi-top-menu{
+     position: absolute;
+     z-index: 9999;
+ }
+#rw-mn #rpi-top-menu li{
+    list-style: none;
+    float: left;
+    padding-left: 20px;
+}
+#rw-mn #rpi-top-menu .menu-scroll-down{
+    display: none;
+}
+
 #rw-mn .rw-search-wrapper{
     display: flex;
     flex-flow: nowrap;

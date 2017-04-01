@@ -42,6 +42,21 @@ jQuery(document).ready(function($){
         jQuery('#rw-mn #searchsubmit').on('mouseover', function () {
             var inp = jQuery('#rw-mn .rw-search-wrapper input')[0];
             inp.focus();
+            jQuery('#rpi-top-menu').hide();
+            jQuery('#rw-mn #s').attr('placeholder','Suchbegriff eingeben');
+
+        });
+        jQuery('#rw-mn #searchsubmit').on('mouseout', function () {
+            jQuery('#rw-mn #s').attr('placeholder','');
+        });
+
+        jQuery('#rw-mn #s').on('keydown', function () {
+            jQuery('#rw-mn #s').attr('placeholder','');
+            jQuery('#rpi-top-menu').hide();
+        });
+        jQuery('#rw-mn #s').on('click', function () {
+            jQuery('#rw-mn #s').attr('placeholder','');
+            jQuery('#rpi-top-menu').hide();
         })
 
         //mehr von rpi-virtuell dienste sidebar
@@ -76,7 +91,24 @@ jQuery(document).ready(function($){
             jQuery('#wp-admin-bar-user-info').remove();
             jQuery('#wp-admin-bar-logout').remove();
         }
+
+
+        /**
+         * twentyseventeen top-menu beim down-scrollen in der Suchleiste anzeigen
+         */
+
+        jQuery(document).on( 'scroll', function(e){
+            if(jQuery('#masthead .navigation-top').position().top < 33 ){
+                var nav = jQuery('#site-navigation').html();
+                jQuery('#rpi-top-menu').html(nav);
+                jQuery('#rpi-top-menu').show();
+            }else{
+                jQuery('#rpi-top-menu').hide();
+            }
+        });
     }
+
+
 
 
     /**

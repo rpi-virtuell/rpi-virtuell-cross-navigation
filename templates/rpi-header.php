@@ -30,6 +30,9 @@
                 </div><!--.left-col-->
 
                 <div class="rpi-center-col">
+                    <div id="rpi-top-menu">
+
+                    </div>
                     <div class="header-navigation">
                         <?php echo apply_filters('rw_multiinstanz_navigation_get_searchfield',rw_multiinstanz_navigation_get_searchfield());?>
                     </div>
@@ -37,7 +40,6 @@
 
                 <div class="rpi-right-col">
                     <div class="header-navigation">
-
 
 
                         <?php if(!is_user_logged_in()):?>
