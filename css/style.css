@@ -53,6 +53,7 @@
     font-size: 15px;
     font-weight: bold;
     text-align: center;
+    clear:both;
 }
 
 #more-rpi-container-sidebar .rpi-core-services li{
