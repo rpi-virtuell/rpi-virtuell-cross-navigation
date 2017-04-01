@@ -49,6 +49,107 @@ class RW_MultiInstanz_Navigation_Core {
         wp_enqueue_style( 'customStyle',RW_MultiInstanz_Navigation::$plugin_url . 'css/style.css' );
         wp_enqueue_style( 'font-awesome',RW_MultiInstanz_Navigation::$plugin_url . 'css/font-awesome.min.css' );
         wp_enqueue_style( 'jquery-ui', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' );
+
+        $current_theme = wp_get_theme()->get('Name');
+        if($current_theme == 'Boss'){
+
+        }
+
+        $style = "";
+
+        if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) ){
+            switch (RW_MultiInstanz_Navigation_Settings::get('service')){
+                case 'material':
+                    $bg_main  = '#D95821';
+                    $bg       = '#EB8154';
+                    $bg_hover = '#8E320B';
+                    break;
+                case 'blogs':
+                    $bg_main  = '#D98521';
+                    $bg       = '#EBA654';
+                    $bg_hover = '#8E520B';
+                    break;
+                case 'news':
+                    $bg_main  = '#169361';
+                    $bg       = '#47C894';
+                    $bg_hover = '#07613D';
+                    break;
+                case 'gruppen':
+                    $bg_main  = '#734F89';
+                    $bg       = '#5B4667';
+                    $bg_hover = '#411A59';
+                    break;
+                default:
+                    $bg_main  = '#1B638A';
+                    $bg       = '#6AA4C3';
+                    $bg_hover = '#093E5A';
+            }
+
+            $style = "
+                #rw-mn .rpi-header-blogname{
+                    background: $bg_main; /* Old browsers */
+                    background: -moz-linear-gradient(to top, $bg_main 1%, $bg_main 26%, transparent 26%, transparent 26%, transparent 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(to top, $bg_main 1%,$bg_main 26%,transparent 26%,transparent 26%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to top, $bg_main 1%,$bg_main 26%,transparent 26%,transparent 26%,transparent 100%) ; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$bg_main', endColorstr='transparent',GradientType=1 ); /* IE6-9 */
+                
+                }
+                
+                #rw-mn nav ul li ul{
+                    background: $bg_main;
+                }
+                #rw-mn nav ul li ul li:hover a {
+                   background: $bg;
+                }
+                
+                /* nav buttons */
+                #rw-mn .rpi-header-more-rpi a{
+                    background-color: $bg;
+                    color: white;
+                }
+                #rw-mn .rpi-header-more-rpi a:hover{
+                    background-color: $bg_hover;
+                }
+                
+                #rw-mn .rw-search-wrapper button{
+                    background-color: $bg;
+                }
+                
+                #rw-mn .rw-search-wrapper button:hover{
+                    background-color: $bg_hover;
+                }
+                
+                #rw-mn .rpi-header-button a{
+                    background-color: $bg_main;
+                }
+                #rw-mn .rpi-header-button a:hover{
+                    background-color: $bg_hover !important;
+                    color: #ffffff;
+                }  
+                #wp-admin-bar-my-account{
+                    opacity: 0;
+                }
+                
+                
+                
+            ";
+
+            wp_add_inline_style( 'customStyle', $style );
+        }
+
+        $style .= "
+                #wpadminbar #wp-admin-bar-wp-logo > .ab-item{
+                    background-image:url( ".RW_MultiInstanz_Navigation::$plugin_url."assets/rpi-logo-trans.png );
+                    background-size: contain;
+                }
+                #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+                    content: '';
+                }
+
+                ";
+        wp_add_inline_style( 'customStyle', $style );
+
+
     }
 
     /**
@@ -63,7 +164,6 @@ class RW_MultiInstanz_Navigation_Core {
     public static function enqueue_js() {
 
         wp_enqueue_script( 'rw_cas_accunt_script','//login.reliwerk.de/account.php',array() ,'0.0.2', true );
-        //wp_enqueue_script( 'jquery-ui','//code.jquery.com/ui/1.12.1/jquery-ui.js'  ,array() ,null, true);
         wp_enqueue_script( 'rw_multiinstanz_sidebar_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/jquery.sidebar.min.js' ,array() ,'0.0.2', true);
         wp_enqueue_script( 'rw_multiinstanz_navigation_ajax_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/javascript.js' ,array() ,'0.0.2', true);
         wp_localize_script( 'rw_multiinstanz_navigation_ajax_script', 'rw_mn_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );

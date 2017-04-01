@@ -4,48 +4,52 @@
  * User: Joachim
  * Date: 01.02.2017
  * Time: 01:42
+ * <i class="fa fa-newspaper-o"></i> <i class="fa fa-search"></i><i class="fa fa-users"></i><i class="fa fa-pencil-square-o"></i>
  */
+
 ?>
 <div id="more-rpi-container-sidebar" title="Dienste von rpi-virtuell">
     <div class="rpi-container-sidebar-content">
-        <p class="rpi-container-sidebar-title">Dienste und Angebote von rpi-virtuell</p>
+        <p class="rpi-container-sidebar-title">Kerndienste von rpi-virtuell</p>
         <div class="rpi-core-services">
             <ul>
-                <li>
+                <li class="rpi-service-news">
                     <a href="http://news.rpi-virtuell.de/">
-                        <i class="fa fa-newspaper-o"></i>
                         <span class="service-label">
-                            News (Bildungsnachrichten)
-                        </span>
+                            news
+                        </span><br>
+                        Bildungsnachrichten
                     </a>
                 </li>
-                <li>
+                <li class="rpi-service-materialpool">
                     <a href="http://material.rpi-virtuell.de/">
-                        <i class="fa fa-search"></i>
                         <span class="service-label">
-                            Materialpool (freie Bildungsmedien)
-                        </span>
+                            materialpool
+                        </span><br>
+                        Freie Bildungsmedien
                     </a>
                 </li>
-                <li>
+                <li class="rpi-service-gruppen">
                     <a href="http://gruppen.rpi-virtuell.de/">
-                        <i class="fa fa-users"></i>
                         <span class="service-label">
-                            Gruppen (Soziales Netzwerk)
-                        </span>
+                            gruppen
+                        </span><br>
+                        Soziales Netzwerk
                     </a>
                 </li>
-                <li>
+                <li class="rpi-service-blogs">
                     <a href="http://blogs.rpi-virtuell.de/">
-                        <i class="fa fa-pencil-square-o"></i>
                         <span class="service-label">
-                            Blogs (Eigene Webseiten erstellen)
-                        </span>
+                            webspace
+                        </span><br>
+                        Eigene Webseiten
                     </a>
                 </li>
             </ul>
         </div>
-        <div class="rpi-more-services">
+        <div class="clear"></div>
+        <p class="rpi-container-sidebar-title">Noch mehr von rpi-virtuell</p>
+        <div class="rpi-more-services rpi-service-more">
             <ul>
                 <li>
                     <a href="http://blogs.rpi-virtuell.de/artothek">
@@ -81,7 +85,7 @@
                 </li>
                 <li>
                     <a href="http://blogs.rpi-virtuell.de/reformation">
-                        <i class="fa fa-hand-lizard-o"></i>
+                        <i class="fa fa-search"></i>
                         <span class="service-label">
                         Reformation 2017 (Praxistipps)
                     </span>
@@ -95,14 +99,7 @@
                     </span>
                     </a>
                 </li>
-                <li>
-                    <a href="http://support.rpi-virtuell.de/tvtipps">
-                        <i class="fa fa-question-circle"></i>
-                        <span class="service-label">
-                        Support (Wir helfen gerne!)
-                    </span>
-                    </a>
-                </li>
+
             </ul>
         </div>
         <div class="rpi-about-link">
@@ -111,7 +108,15 @@
                     <a href="http://about.rpi-virtuell.de/tvtipps">
                         <i class="fa fa-info-circle"></i>
                         <span class="service-label">
-                        Mehr über rpi-virtuell
+                        Über rpi-virtuell
+                    </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://support.rpi-virtuell.de/tvtipps">
+                        <i class="fa fa-question-circle"></i>
+                        <span class="service-label">
+                        Support (Wir helfen gerne!)
                     </span>
                     </a>
                 </li>

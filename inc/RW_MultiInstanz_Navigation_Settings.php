@@ -146,41 +146,40 @@ class RW_MultiInstanz_Navigation_Settings {
             'rw-multiinstanz-navigation-setting-page'
         );
 
-/*
-        $select_options[] = array( 'news' => 'fa-rss' );
-        $select_options[] = array( 'blogs' => '' );
-        $select_options[] = array( 'material' => '' );
-        $select_options[] = array( 'relilex' => '' );
-        $select_options[] = array( 'reformation' => '' );
-        $select_options[] = array( 'support' => 'fa-wrench' );
-        $select_options[] = array( 'gruppen' => '' );
-        $select_options[] = array( 'kurse' => '' );
-        $select_options[] = array( 'arthotek' => '' );
-        $select_options[] = array( 'h5p' => '' );
-        $select_options[] = array( 'tvtipps' => '' );
-        $select_options[] = array( 'relipuls' => '' );
-        $select_options[] = array( 'openreli' => '' );
-*/
+
+
+
+
+
 
 
         /* --- Selectbox ----- */
 
-        /*
+
         function rw_selectfield_draw(  ) {
             $options = RW_MultiInstanz_Navigation_Settings::$options;
 
-            $pages = get_pages();
-            foreach ( $pages as $page ) {
-                $selected = ($options['service'] == $page->ID)? ' selected':'';
-                $select_option = '<option value="' . $page->ID  . '"'.$selected.'>';
-                $select_option .= $page->post_title;
+            $service = $options['service'];
+
+            $select_options[ 'Kein' ] = 'none' ;
+            $select_options[ 'News' ] = 'news' ;
+            $select_options[ 'Webspace' ] = 'blogs' ;
+            $select_options[ 'Materialpool' ] = 'materialpool' ;
+            $select_options[ 'Gruppen' ] = 'gruppen' ;
+
+            $select_option = '';
+
+            foreach ( $select_options as $k=>$v ) {
+                $selected = ($v == $service)? ' selected':'';
+                $select_option .= '<option value="' . $v  . '"'.$selected.'>';
+                $select_option .= $k;
                 $select_option .= '</option>';
 
             }
 
             ?>
-            <select class="rw-multiinstanz-navigation-option-select" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[option3]' selected='<?php echo $options['option3']; ?>'>
-                <option><?php  echo __('Please Choose',RW_MultiInstanz_Navigation::get_textdomain()); ?></option>
+            <select class="rw-multiinstanz-navigation-option-select" type='text' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[service]' selected='<?php echo $options['service']; ?>'>
+                <option><?php  echo __('Please choose',RW_MultiInstanz_Navigation::get_textdomain()); ?></option>
                 <?php  echo $select_option; ?>
             </select>
             <?php
@@ -188,13 +187,13 @@ class RW_MultiInstanz_Navigation_Settings {
 
 
         add_settings_field(
-            'option3',
-            __( 'Select a Page', RW_MultiInstanz_Navigation::get_textdomain() ),
+            'service',
+            __( 'Select rpi-virtuell Kontext', RW_MultiInstanz_Navigation::get_textdomain() ),
             'rw_selectfield_draw',
             'section_1',
             'rw-multiinstanz-navigation-setting-page'
         );
-        */
+
     }
 
     /**

@@ -30,14 +30,12 @@
 .rpi-container-sidebar-content{
     /*font-family: "Imprima","Open Sans",sans-serif;*/
     font-size:15px;
-    margin:3%;
+    padding-top: 20px;
+
 }
 .rpi-container-sidebar-content ul{
     list-style: none;
     line-height: 1.7;
-}
-.rpi-container-sidebar-content span{
-    margin-left: 10px;
 }
 
 .rpi-container-sidebar-content a:hover{
@@ -51,9 +49,44 @@
     height: calc(100vh - 65px )!important;
 }
 
+#more-rpi-container-sidebar .rpi-container-sidebar-title{
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
 
+#more-rpi-container-sidebar .rpi-core-services li{
+     width: 44%;
+     height: 100px;
+     float: left;
+     margin-left:4%;
+     margin-bottom:4%;
+}
+#more-rpi-container-sidebar .rpi-core-services li a{
+    display: block;
+    margin:10px;
+}
+.rpi-container-sidebar-content .rpi-core-services span{
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Oswald","Open Sans",sans-serif;
+}
+#more-rpi-container-sidebar .rpi-more-services{
+    margin: 4%;
+}
+#more-rpi-container-sidebar .rpi-more-services li{
+    margin: 4%;
+}
+#more-rpi-container-sidebar .rpi-about-link{
+    margin: 4%;
+    border: 1px solid #1B638A;
+}
+#more-rpi-container-sidebar .rpi-about-link ul{
+    margin: 4%;
 
-/*****************************************************************************/
+}
+
+    /*****************************************************************************/
 /* header bar */
 
 #rw-mn {
@@ -62,8 +95,10 @@
     left:0;
     z-index: 100001;
     width: 100%;
-    /*font-family: "Imprima","Open Sans",sans-serif;*/
     border:0;
+    -webkit-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.71);
+    -moz-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.71);
+    box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.71);
 }
 #rw-mn-shadow{
     height:65px;
@@ -149,7 +184,7 @@
     width:70px;
     opacity:1;
     flex:0 70px;
-    margin:5px;
+    margin: 5px 5px 5px 0;
 
 }
 #rw-mn .rpi-header-more-rpi a{
