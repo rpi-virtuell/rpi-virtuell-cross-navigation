@@ -1,5 +1,5 @@
 *{
-    font-family: "Cairo","Open Sans",sans-serif;
+    font-family: "Roboto","Open Sans",sans-serif;
 }
 
 #wpadminbar{
@@ -41,7 +41,6 @@
 }
 
 #rw-mn .rpi-header-logo .rpi-header-blogname{
-    font-family: "Oswald","Open Sans",sans-serif;
     color:snow;
     padding: 15px 0 0 20px;
     font-size: 30px;

@@ -24,7 +24,7 @@
                 <li class="rpi-service-materialpool">
                     <a href="http://material.rpi-virtuell.de/">
                         <span class="service-label">
-                            materialpool
+                            material
                         </span><br>
                         Freie Bildungsmedien
                     </a>
@@ -40,7 +40,7 @@
                 <li class="rpi-service-blogs">
                     <a href="http://blogs.rpi-virtuell.de/">
                         <span class="service-label">
-                            webspace
+                            blogs
                         </span><br>
                         Eigene Webseiten
                     </a>
@@ -63,7 +63,7 @@
                     <a href="http://kurse.rpi-virtuell.de/">
                         <i class="fa fa-university"></i>
                         <span class="service-label">
-                        Kurse ( Lernmanagemenstsystem )
+                        Kurse ( Lernmanagementsystem )
                     </span>
                     </a>
                 </li>
