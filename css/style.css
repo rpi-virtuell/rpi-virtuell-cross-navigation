@@ -21,7 +21,7 @@
     z-index: 100001;
     margin-top: 70px;
     padding:0;
-    min-width: 300px;
+    min-width: 400px;
     display: none;
 }
 .admin-bar #more-rpi-container-sidebar {
@@ -121,8 +121,8 @@
     max-width: 100%;
 }
 #rw-mn .rpi-left-col{
-    flex: 0 20%;
-    min-width: 250px;
+    flex: 0 400px;
+    min-width: 350px;
 }
 #rw-mn .rpi-center-col{
     flex: 1 0px;
@@ -139,14 +139,15 @@
         display: none;
     }
     #rw-mn .rpi-left-col{
-        flex: 0 280px;
+        flex: 1;
+        max-width: 400px;
     }
     #rw-mn .rpi-right-col{
-        flex: 1;
+        flex:0 150px
     }
 }
 @media all and (max-width: 600px) {
-    #rw-mn .rpi-left-col{
+    #rw-mn .rpi-header-more-rpi {
         display: none;
     }
 }
@@ -171,6 +172,7 @@
     flex: 1;
     line-height: 1.5;
     text-transform: lowercase;
+    min-width: 170px;
 
 }
 #rw-mn .rpi-header-logo img{
@@ -182,18 +184,22 @@
 #rw-mn .rpi-header-more-rpi{
     height: 70px;
     width:70px;
+    min-width:70px;
+    max-width:70px;
     opacity:1;
     flex:0 70px;
-    margin: 5px 5px 5px 0;
+    /*margin: 5px 5px 5px -15px;*/
+
 
 }
 #rw-mn .rpi-header-more-rpi a{
     display: block;
     font-size: 22px;
     height: 70px;
-    width: 100px;
-    padding: 25px 29px;
-    margin: -5px -10px auto auto;
+    width: 80px;
+    padding: 25px 25px;
+    /*margin: -5px -10px auto auto;*/
+
 }
 
 
@@ -213,6 +219,8 @@
 #rw-mn #rpi-top-menu{
      position: absolute;
      z-index: 9999;
+     font-size: .9vw;
+     margin-right: 70px;
  }
 #rw-mn #rpi-top-menu li{
     list-style: none;
@@ -226,7 +234,7 @@
 #rw-mn .rw-search-wrapper{
     display: flex;
     flex-flow: nowrap;
-    min-width: 200px;
+    min-width: 150px;
     max-width: 100%;
     height: 70px;
     overflow: hidden;
@@ -241,6 +249,7 @@
     padding: 0 20px;
     margin: 0;
     background-image: none;
+    width:auto;
 }
 #rw-mn .rw-search-wrapper button {
     flex: 0 20px;
@@ -415,4 +424,49 @@ nav ul li:hover ul.fallback {
 }
 #page-container header#main-header{
     top: 100px;
+}
+.navigation-top{
+    z-index:9;
+}
+
+@media all and (max-width: 1024px) {
+    .rpi-header-notifications, .rpi-user-name{
+        display: none;
+    }
+    #rw-mn .rpi-right-col ul.rpi-header-account .rpi-header-avatar{
+        display: inline;
+        float: right;
+    }
+    #rw-mn #rpi-user-avatar {
+        margin-right: 13px;
+        float: right;
+    }
+    #rw-mn .rpi-header-more-rpi{
+
+    }
+    #rw-mn .rw-search-wrapper{
+        flex: 0;
+    }
+}
+@media all and (max-width: 768px) {
+    #rw-mn{
+        position:absolute;
+    }
+    #rw-mn .rpi-header-avatar {
+        margin-top: 17px;
+    }
+    #rw-mn .rpi-right-col {
+        flex: 1;
+    }
+    #rw-mn .rpi-header-logo img{
+        margin-top: 11px;
+    }
+}
+@media all and (max-width: 420px) {
+    #rw-mn .rpi-header-logo .rpi-header-blogname{
+        flex: 0;
+    }
+    #rw-mn .rpi-left-col{
+        min-width: 255px;
+    }
 }
