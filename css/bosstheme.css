@@ -1,0 +1,77 @@
+body.left-menu-open .header-outher{
+    margin-left: 280px;
+}
+
+#rw-boss-header-left-col {
+    display: flex;
+    width: 280px;
+    margin: 0px;
+    padding: 0;
+    margin-left: -18px;
+    margin-top: -11px;
+    height: 75px;
+    margin-right: -19px;
+}
+#rw-boss-header-left-col img#rw-boss-logo{
+    flex:0 80px;
+    width: 80px;
+    height: 71px;
+    margin-top: 5px;
+}
+#rw-boss-header-left-col div.rw-boss-header-name{
+    flex:1;
+    line-height: 54px;
+}
+
+#menu-buddypanel a:hover{
+    background-color: #4C99C3!important;
+}
+#menu-buddypanel .current-menu-item a{
+    background-color: #B396C4;
+}
+#menu-buddypanel .current-menu-item a:before {
+    color: #ffffff!important;
+}
+@media screen and (min-width:480px){
+
+    body.left-menu-open #mastlogo {
+        width: 280px;
+    }
+
+    body.left-menu-open .menu-panel {
+        width: 280px;
+    }
+
+    body.left-menu-open #left-panel-inner #scroll-area {
+        width: 280px;
+    }
+    #right-panel-inner {
+        margin-left: 280px;
+    }
+
+    .header-links{
+        width:auto!important;
+    }
+    .header-links a#rpi-services-button {
+        width: 75px;
+        display: block;
+        height: 77px;
+        margin-left: -25px!important;
+        margin-top: -3px!important;;
+        float:left;
+    }.header-links a#left-menu-toggle {
+        width: 75px;
+        display: block;
+        height: 77px;
+        margin-left: -0px!important;
+        margin-top: -3px!important;;
+        float:left;
+    }
+
+    .header-links a i.fa{
+        margin: 30px 0 0 30px;
+        font-size: 20px;
+    }
+
+
+}

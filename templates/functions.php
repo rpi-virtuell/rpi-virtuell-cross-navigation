@@ -27,23 +27,20 @@ function rw_multiinstanz_navigation_header_action($post_object ) {
         <div id="rw-mn">
               <?php include(  apply_filters('rw_rpi_navi_template_filter','rpi-header.php')  );?>
         </div><div id="rw-mn-shadow"></div><?php
-    else:
-        include(  apply_filters('rw_rpi_service_button_template_filter','boss-button.php')  );
-
-    endif;
+    else:?>
+        <?php include(  apply_filters('rw_rpi_services_filter','rpi-services.php')  );?>
+    <?php endif;
 }
 add_action( 'wp_head', 'rw_multiinstanz_navigation_header_action' );
 
 
 function rw_multiinstanz_navigation_footer_action(){
-    if ( !RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) && RW_MultiInstanz_Navigation_Settings::get( 'selector' ) ){
+    if ( RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ){
         ?>
         <script>
             jQuery(document).ready(function($) {
-                if (jQuery('<?php echo RW_MultiInstanz_Navigation_Settings::get('selector');?>')) {
-                    jQuery('#rpi-header-services-button')
-                        .insertBefore('<?php echo RW_MultiInstanz_Navigation_Settings::get('selector');?>');
-                }
+                $('#mastlogo').append('<div id="rw-boss-header-left-col" class="rpi-header-logo"><img id="rw-boss-logo" src="http://material.rpi-virtuell.de/wp-content/plugins/rw-multiinstanz-navigation//assets/rpi-logo-trans.png"><div class="rpi-header-blogname rw-boss-header-name"><?php echo get_bloginfo('name');?></div></div>');
+
             });
         </script>
         <?php

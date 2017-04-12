@@ -108,6 +108,26 @@ class RW_MultiInstanz_Navigation_Settings {
         );
 
 
+        function rw_checkbox_bosstheme_draw(  ) {
+
+            $optname = 'bosstheme';
+
+            $options = RW_MultiInstanz_Navigation_Settings::$options;   //read exiting value from wp options table
+            $checked = ( isset( $options[$optname] ) && $options[$optname] ) ? true : false;
+            ?>
+            <input class="rw-multiinstanz-navigation-option-checkbox" type='checkbox' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[<?php echo $optname;?>]' <?php checked( $checked ); ?> value='1'>
+            <?php _e('If activated, inject boss theme',RW_MultiInstanz_Navigation::get_textdomain()) ; ?>
+            <?php
+
+        }
+        add_settings_field(
+            'bosstheme',                                              // Option Index
+            __( 'Use Boss Theme', RW_MultiInstanz_Navigation::get_textdomain() ),   // Label
+            'rw_checkbox_bosstheme_draw',                         // function to draw HTML Input
+            'section_1',                                            // section slug
+            'rw-multiinstanz-navigation-setting-page'               // id der setting page
+        );
+
 
         /* --- Textfield ----- */
 

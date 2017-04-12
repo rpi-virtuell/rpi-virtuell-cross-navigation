@@ -50,16 +50,22 @@ class RW_MultiInstanz_Navigation_Core {
         wp_enqueue_style( 'font-awesome',RW_MultiInstanz_Navigation::$plugin_url . 'css/font-awesome.min.css' );
         wp_enqueue_style( 'jquery-ui', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css' );
 
-        $current_theme = wp_get_theme()->get('Name');
-        if($current_theme == 'Boss'){
+        if ( RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ) {
+
+            wp_enqueue_style( 'bossStyle',RW_MultiInstanz_Navigation::$plugin_url . 'css/bosstheme.css');
+
 
         }
 
         $style = "";
 
+        $current_theme = wp_get_theme()->get('Name');
+        if($current_theme == 'RW Social Learner'){
+
+        }
 
 
-        if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) ){
+        if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) || RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ){
             switch (RW_MultiInstanz_Navigation_Settings::get('service')){
                 case 'materialpool':
                     $bg_main  = '#D95821';
@@ -88,7 +94,7 @@ class RW_MultiInstanz_Navigation_Core {
             }
 
             $style = "
-                #rw-mn .rpi-header-blogname{
+                .rpi-header-blogname{
                     background: $bg_main; /* Old browsers */
                     background: -moz-linear-gradient(to top, $bg_main 1%, $bg_main 26%, transparent 26%, transparent 26%, transparent 100%); /* FF3.6-15 */
                     background: -webkit-linear-gradient(to top, $bg_main 1%,$bg_main 26%,transparent 26%,transparent 26%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
@@ -106,7 +112,7 @@ class RW_MultiInstanz_Navigation_Core {
                 
                 /* nav buttons */
                 #rw-mn .rpi-header-more-rpi a{
-                    background-color: $bg;
+                    background-color: $bg_main;
                     color: white;
                 }
                 #rw-mn .rpi-header-more-rpi a:hover{
@@ -132,6 +138,30 @@ class RW_MultiInstanz_Navigation_Core {
                     opacity: 0;
                 }
                 
+                /*bosstheme*/
+                
+                a#search-open{
+                    background-color: $bg!important;
+                    color:#fff!important;
+                }
+                #rpi-services-button{
+                    background-color: $bg_main!important;
+                    color:#fff!important;
+                }
+                
+                a#search-open:hover,.header-links #rpi-services-button:hover{
+                    background-color: $bg_hover!important;
+                }
+                .pop a, #adminbar-links a{
+                    color: $bg_hover!important;
+                    
+                }
+                .pop *{
+                    opacity:1!important;
+                }
+                #mastlogo, #masthead .right-col{
+                    background: #1B638A !important;
+                }
                 
                 
             ";
@@ -169,6 +199,11 @@ class RW_MultiInstanz_Navigation_Core {
         wp_enqueue_script( 'rw_multiinstanz_sidebar_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/jquery.sidebar.min.js' ,array() ,'0.0.2', true);
         wp_enqueue_script( 'rw_multiinstanz_navigation_ajax_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/javascript.js' ,array() ,'0.0.2', true);
         wp_localize_script( 'rw_multiinstanz_navigation_ajax_script', 'rw_mn_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+        if ( RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ) {
+            wp_enqueue_script( 'rw_multiinstanz_bosstheme_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/bosstheme.js' ,array() ,'0.0.2', true);
+        }
+
 
 
     }
