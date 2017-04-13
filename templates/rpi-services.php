@@ -105,7 +105,7 @@
         <div class="rpi-about-link">
             <ul>
                 <li>
-                    <a href="http://about.rpi-virtuell.de/tvtipps">
+                    <a href="http://about.rpi-virtuell.de/">
                         <i class="fa fa-info-circle"></i>
                         <span class="service-label">
                         Über rpi-virtuell
@@ -113,7 +113,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://support.rpi-virtuell.de/tvtipps">
+                    <a href="http://support.rpi-virtuell.de/">
                         <i class="fa fa-question-circle"></i>
                         <span class="service-label">
                         Support (Wir helfen gerne!)
