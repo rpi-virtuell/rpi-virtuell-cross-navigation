@@ -33,13 +33,13 @@ body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
     line-height: 54px;
 }
 
-#menu-buddypanel a:hover{
+#left-panel #scroll-area a:hover{
     background-color: #4C99C3!important;
 }
-#menu-buddypanel .current-menu-item a{
+#left-panel #scroll-area .current-menu-item a{
     background-color: #B396C4;
 }
-#menu-buddypanel .current-menu-item a:before {
+#left-panel #scroll-area .current-menu-item a:before {
     color: #ffffff!important;
 }
 
@@ -96,7 +96,7 @@ body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
     }
 
     .site-content {
-        width: 60%;
+        min-width: 60%;
 
     }
 }
@@ -120,7 +120,7 @@ body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
         min-width: 390px;
     }
     .site-content {
-        width: 60%;
+        min-width: 65%;
 
     }
 }
@@ -130,7 +130,7 @@ body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
         min-width: 455px;
     }
     .site-content {
-        width: 71%;
+        min-width: 71%;
 
     }
 }
