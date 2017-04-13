@@ -39,7 +39,8 @@ function rw_multiinstanz_navigation_footer_action(){
         ?>
         <script>
             jQuery(document).ready(function($) {
-                $('#mastlogo').append('<div id="rw-boss-header-left-col" class="rpi-header-logo"><img id="rw-boss-logo" src="http://material.rpi-virtuell.de/wp-content/plugins/rw-multiinstanz-navigation//assets/rpi-logo-trans.png"><div class="rpi-header-blogname rw-boss-header-name"><?php echo get_bloginfo('name');?></div></div>');
+                $('#mastlogo').append('<div id="rw-boss-header-left-col" class="rpi-header-logo"><img id="rw-boss-logo" src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png"><div class="rpi-header-blogname rw-boss-header-name"><?php echo get_bloginfo('name');?></div></div>');
+                $('.mobile-site-title').html('<img id="rw-mobile-boss-logo" style="width: 58px;float: left;" src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png"><div class="rpi-header-blogname rw-boss-mobile-header-name"><?php echo get_bloginfo('name');?></div>');
 
             });
         </script>

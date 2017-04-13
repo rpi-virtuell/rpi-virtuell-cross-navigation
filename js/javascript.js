@@ -95,18 +95,18 @@ jQuery(document).ready(function($){
                 jQuery('#rpi-top-menu').hide();
             }
         });
+
+        //mehr von rpi-virtuell dienste sidebar
+
+        jQuery("#more-rpi-container-sidebar").css('display','block');
+        jQuery("#more-rpi-container-sidebar").sidebar();
+        jQuery("#rpi-services-button").on("click", function () {
+            jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
+            return false;
+        });
+
+
     }
-
-    //mehr von rpi-virtuell dienste sidebar
-
-    jQuery("#more-rpi-container-sidebar").css('display','block')
-    jQuery("#more-rpi-container-sidebar").sidebar();
-    jQuery("#rpi-services-button").on("click", function () {
-
-
-        jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
-        return false;
-    });
 
 
 

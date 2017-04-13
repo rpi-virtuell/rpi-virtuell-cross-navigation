@@ -12,12 +12,22 @@ body.left-menu-open .header-outher{
     height: 75px;
     margin-right: -19px;
 }
+
 #rw-boss-header-left-col img#rw-boss-logo{
+    flex:0 60px;
+    width: 60px;
+    height: 53px;
+    margin-top: 12px;
+}
+
+body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
     flex:0 80px;
     width: 80px;
     height: 71px;
     margin-top: 5px;
 }
+
+
 #rw-boss-header-left-col div.rw-boss-header-name{
     flex:1;
     line-height: 54px;
@@ -32,20 +42,24 @@ body.left-menu-open .header-outher{
 #menu-buddypanel .current-menu-item a:before {
     color: #ffffff!important;
 }
+
+.social-learner #more-rpi-container-sidebar{
+    margin-top: 74px;
+}
+.social-learner #more-rpi-container-sidebar .rpi-container-sidebar-title{
+    color: #fff!important;
+}
 @media screen and (min-width:480px){
 
-    body.left-menu-open #mastlogo {
+    #rw-boss-header-left-col,
+    body.left-menu-open #mastlogo,
+    body.left-menu-open .menu-panel,
+    body.left-menu-open #left-panel-inner #scroll-area
+    {
         width: 280px;
     }
 
-    body.left-menu-open .menu-panel {
-        width: 280px;
-    }
-
-    body.left-menu-open #left-panel-inner #scroll-area {
-        width: 280px;
-    }
-    #right-panel-inner {
+    #right-panel-inner , body.left-menu-open .header-outher{
         margin-left: 280px;
     }
 
@@ -73,5 +87,80 @@ body.left-menu-open .header-outher{
         font-size: 20px;
     }
 
+    #mastlogo{
+        height:74px;
+        overflow: hidden;
+    }
+    #masthead .right-col, #secondary{
+        min-width: 297px;
+    }
 
+    .site-content {
+        width: 60%;
+
+    }
+}
+
+
+@media screen and (min-width:1280px) {
+
+    #rw-boss-header-left-col,
+    body.left-menu-open #mastlogo,
+    body.left-menu-open .menu-panel,
+    body.left-menu-open #left-panel-inner #scroll-area
+    {
+        width: 326px;
+    }
+
+    #right-panel-inner , body.left-menu-open .header-outher{
+        margin-left: 326px;
+    }
+
+    #masthead .right-col, #secondary{
+        min-width: 390px;
+    }
+    .site-content {
+        width: 60%;
+
+    }
+}
+
+@media screen and (min-width:1600px) {
+    #secondary{
+        min-width: 455px;
+    }
+    .site-content {
+        width: 71%;
+
+    }
+}
+
+.is-mobile #right-panel-inner, .is-mobile body.left-menu-open .header-outher{
+    margin-left: 0px;
+}
+
+body.is-mobile #rw-boss-header-left-col, body.is-mobil #mastlogo,body.is-mobile .menu-panel, body.is-mobile #left-panel-inner #scroll-area {
+    width: 287px;
+}
+
+body.is-mobile #wp-admin-bar-my-account{
+    opacity: 1;
+}
+.footer-credits{
+    display: none;
+}
+
+.dir-page-entry .inner-padding, header.activity-header.page-header{
+    background-color: #B396C4;
+}
+.dir-page-entry *, .activity-header *{
+    color: #411A59!important;
+}
+
+.create-a-group a, .generic-button a, .right-col .pop .logout a {
+    background-color: #5B4667!important;
+    color:#fff!important;
+}
+.bb-cover-photo .holder{
+    background-color: #4C99C3;
 }
