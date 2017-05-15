@@ -71,9 +71,14 @@ class RW_MultiInstanz_Navigation_Settings {
 
             $options = RW_MultiInstanz_Navigation_Settings::$options;   //read exiting value from wp options table
             $checked = ( isset( $options[$optname] ) && $options[$optname] ) ? true : false;
+
+            if ( RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ) {
+                $checked = false;
+            }
+
             ?>
             <input class="rw-multiinstanz-navigation-option-checkbox" type='checkbox' name='<?php echo RW_MultiInstanz_Navigation_Settings::$option_name; ?>[<?php echo $optname;?>]' <?php checked( $checked ); ?> value='1'>
-            <?php _e('If activated, a header cross site rpi-virtuell bar will be displayed on each blog page.',RW_MultiInstanz_Navigation::get_textdomain()) ; ?>
+            <?php _e('If activated, a header cross site rpi-virtuell bar will be displayed on each blog page. Will not work with "boss" theme or "social-learner" theme!',RW_MultiInstanz_Navigation::get_textdomain()) ; ?>
             <?php
 
         }
@@ -147,7 +152,7 @@ class RW_MultiInstanz_Navigation_Settings {
             'section_1',
             'rw-multiinstanz-navigation-setting-page'
         );
-
+/*
         function rw_rpi_button_doms_elector_draw(  ) {
 
             $option='selector';
@@ -166,7 +171,7 @@ class RW_MultiInstanz_Navigation_Settings {
             'rw-multiinstanz-navigation-setting-page'
         );
 
-
+*/
 
 
 

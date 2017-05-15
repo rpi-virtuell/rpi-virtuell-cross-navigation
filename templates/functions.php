@@ -23,7 +23,7 @@ function rw_multiinstanz_navigation_get_searchfield(){
 function rw_multiinstanz_navigation_header_action($post_object ) {
     include(  apply_filters('rw_services_template_filter','rpi-services.php')  );
 
-    if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) ) :?>
+    if ( RW_MultiInstanz_Navigation_Settings::get( 'headerbar' ) && ! RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ) :?>
         <div id="rw-mn">
               <?php include(  apply_filters('rw_rpi_navi_template_filter','rpi-header.php')  );?>
         </div><div id="rw-mn-shadow"></div><?php
