@@ -88,7 +88,8 @@ class RW_MultiInstanz_Navigation_Core {
                     $bg_hover = '#411A59';
                     break;
                 default:
-                    $bg_main  = '#1B638A';
+                  //  $bg_main  = '#1B638A';
+                    $bg_main  = '#6AA4C3';
                     $bg       = '#6AA4C3';
                     $bg_hover = '#093E5A';
             }
@@ -133,6 +134,7 @@ class RW_MultiInstanz_Navigation_Core {
                 #rw-mn .rpi-header-button a:hover{
                     background-color: $bg_hover !important;
                     color: #ffffff;
+                    
                 }  
                 #wp-admin-bar-my-account{
                     opacity: 0;
@@ -148,7 +150,17 @@ class RW_MultiInstanz_Navigation_Core {
                     background-color: $bg_main!important;
                     color:#fff!important;
                 }
-                
+                #rpi-services-button:hover{
+                    background-color: $bg_hover!important;
+                 }
+                #rpi-services-button i:hover{
+                    transform: rotate(90deg) scale(2,2);
+                    -webkit-transition: .6s;
+                    -moz-transition: .6s;
+                    -o-transition: .6s;
+                    transition: .6s;
+                    
+                }
                 a#search-open:hover,.header-links #rpi-services-button:hover{
                     background-color: $bg_hover!important;
                 }

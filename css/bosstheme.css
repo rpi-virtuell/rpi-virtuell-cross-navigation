@@ -164,3 +164,7 @@ body.is-mobile #wp-admin-bar-my-account{
 .bb-cover-photo .holder{
     background-color: #4C99C3;
 }
+/** Links in Docs **/
+.doc-content a {
+    text-decoration: underline;
+}
