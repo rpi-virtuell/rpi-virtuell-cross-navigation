@@ -14,10 +14,12 @@
                 <div class="rpi-left-col">
 
                     <div class="rpi-header-logo">
-                        <img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png">
+                        <a href="http://rpi-virtuell.de/"><img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png"></a>
                         <div class="rpi-header-blogname" >
                             <!--style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/blogs.png') no-repeat 10px center; background-size: 50px"-->
-                            <?php echo get_bloginfo('name');?>
+                            <a href="<?php echo get_site_url(); ?>">
+                                <?php echo get_bloginfo('name');?>
+                            </a>
                             <!-- mehr rpi-virtuell -->
                         </div>
                         <div class="rpi-header-more-rpi">

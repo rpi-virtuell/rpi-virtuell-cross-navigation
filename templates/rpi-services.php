@@ -63,7 +63,7 @@
                     <a href="http://kurse.rpi-virtuell.de/">
                         <i class="fa fa-university"></i>
                         <span class="service-label">
-                        Kurse ( Lernmanagementsystem )
+                        Kurse (Lernmanagementsystem)
                     </span>
                     </a>
                 </li>
@@ -79,7 +79,7 @@
                     <a href="http://openreli.de/">
                         <i class="fa fa-graduation-cap"></i>
                         <span class="service-label">
-                        openreli ( offener Online Kurs )
+                        openreli (offener Online Kurs)
                     </span>
                     </a>
                 </li>
@@ -91,15 +91,6 @@
                     </span>
                     </a>
                 </li>
-                <li>
-                    <a href="http://blogs.rpi-virtuell.de/tvtipps">
-                        <i class="fa fa-television"></i>
-                        <span class="service-label">
-                        TV- Tipps (für Unterrichtende)
-                    </span>
-                    </a>
-                </li>
-
             </ul>
         </div>
         <div class="rpi-about-link">
@@ -114,9 +105,17 @@
                 </li>
                 <li>
                     <a href="http://support.rpi-virtuell.de/">
-                        <i class="fa fa-question-circle"></i>
+                        <i class="fa fa-medkit"></i>
                         <span class="service-label">
                         Support (Wir helfen gerne!)
+                    </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://fragen.rpi-virtuell.de/">
+                        <i class="fa fa-question-circle"></i>
+                        <span class="service-label">
+                        Fragen und Antworten
                     </span>
                     </a>
                 </li>

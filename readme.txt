@@ -35,4 +35,5 @@ Answer
 
 
 == Changelog ==
+0.1.0 dekt2017 release
 0.0.1 initial release
