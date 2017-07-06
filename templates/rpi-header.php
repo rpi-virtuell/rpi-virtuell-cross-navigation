@@ -48,10 +48,11 @@
                         <ul class="rpi-header-signon">
                             <?php if ( RW_MultiInstanz_Navigation_Settings::get( 'loginbutton' ) ) :?>
                                 <li class="rpi-header-button register-button">
-                                    <?php if ( get_option( 'users_can_register' ) ) :?>
-
-                                        <a href="<?php echo wp_registration_url();?>" title="Registrieren">Registrieren</a>
-
+                                    <?php if ( get_option( 'users_can_register' ) ) : ?>
+                                        <?php
+                                        $url = '<a href="'. wp_registration_url() . '" title="Registrieren">Registrieren</a>';
+                                        echo apply_filters( 'register', $url );
+                                        ?>
                                     <?php endif;?>
                                 </li>
                                 <li class="rpi-header-button login-button">
