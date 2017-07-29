@@ -91,11 +91,11 @@ body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
         height:74px;
         overflow: hidden;
     }
-    #masthead .right-col, #secondary{
+    .is-desktop #masthead .right-col, #secondary{
         width: 35%;
     }
 
-    .page-right-sidebar #primary.site-content {
+    .is-desktop .page-right-sidebar #primary.site-content {
         width: 65%;
 
     }
@@ -116,20 +116,20 @@ body.left-menu-open #rw-boss-header-left-col img#rw-boss-logo{
         margin-left: 326px;
     }
 
-    #masthead .right-col, #secondary.widget-area{
+   .is-desktop #masthead .right-col, #secondary.widget-area{
         width: 32%;
     }
-    .page-right-sidebar #primary.site-content {
+   .is-desktop .page-right-sidebar #primary.site-content {
         width: 68%;
 
     }
 }
 
 @media screen and (min-width:1600px) {
-    #secondary.widget-area{
+    .is-desktop #secondary.widget-area{
         width: 28%;
     }
-    .page-right-sidebar #primary.site-content {
+    .is-desktop .page-right-sidebar #primary.site-content {
         width: 72%;
 
     }
