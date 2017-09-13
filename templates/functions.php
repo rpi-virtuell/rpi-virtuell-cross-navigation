@@ -28,7 +28,7 @@ function rw_multiinstanz_navigation_header_action($post_object ) {
               <?php include(  apply_filters('rw_rpi_navi_template_filter','rpi-header.php')  );?>
         </div><div id="rw-mn-shadow"></div><?php
     else:?>
-        <?php include(  apply_filters('rw_rpi_services_filter','rpi-services.php')  );?>
+        <?php //include(  apply_filters('rw_rpi_services_filter','rpi-services.php')  );?>
     <?php endif;
 }
 add_action( 'wp_head', 'rw_multiinstanz_navigation_header_action' );
