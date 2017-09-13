@@ -10,7 +10,7 @@
 ?>
 <div id="more-rpi-container-sidebar" title="Dienste von rpi-virtuell">
     <div class="rpi-container-sidebar-wrapper">
-		<a id="rpi-container-sidebar-button" href="rpi-services">Dienste</a>
+		<a id="rpi-container-sidebar-button" href="#rpi-services">Dienste</a>
 		<div class="rpi-container-sidebar-content">
 			<p class="rpi-container-sidebar-title">Kerndienste von rpi-virtuell</p>
 			<div class="rpi-core-services">
