@@ -3,7 +3,7 @@ RPI Multi-Instanz Navigation
 
  - Author: Joachim Happel
  - Requires wordpress  at least: 4.0
- - Tested up to Version: 4.4
+ - Tested up to Version: 4.8.1
  - License: GPLv2  http://www.gnu.org/licenses/gpl-2.0.html
  
 Description
@@ -28,6 +28,7 @@ Screenshots
  
 Changelog
 ---------------------
-
-0.0.1 initial release
+* 0.1.1 add button to sidebar
+* 0.1.0 dekt2017 release
+* 0.0.1 initial release
  

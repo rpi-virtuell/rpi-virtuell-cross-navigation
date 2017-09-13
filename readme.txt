@@ -2,8 +2,8 @@
 Contributors: Joachim Happel
 Tags: reliwerk, rpi-virtuell
 Requires at least: 4.0
-Tested up to: 4.4
-Stable tag: 0.0.1
+Tested up to: 4.8.1
+Stable tag: 0.1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -35,5 +35,6 @@ Answer
 
 
 == Changelog ==
+0.1.1 add button to sidebar
 0.1.0 dekt2017 release
 0.0.1 initial release

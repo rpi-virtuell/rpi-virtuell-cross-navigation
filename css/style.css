@@ -20,10 +20,28 @@
     color: #fff;
     z-index: 100001;
     margin-top: 70px;
-    padding:0;
-    min-width: 400px;
+    padding:0 30px 0 0;
+    min-width: 420px;
     display: none;
 }
+
+#rpi-container-sidebar-button {
+    position: absolute;
+    left: 375px;
+    transform: rotate(90deg);
+    top: 88px;
+    padding: 2px 10px 0 10px;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 3px 2px 5px -1px rgba(0,0,0,0.71);
+	font-family: monospace;
+}
+
+#more-rpi-container-sidebar .rpi-container-sidebar-wrapper {
+	background: #093E5A;
+	padding: 0 0 30px 0;
+	width:400px; 
+}
+
 .admin-bar #more-rpi-container-sidebar {
     margin-top: 101px;
 }

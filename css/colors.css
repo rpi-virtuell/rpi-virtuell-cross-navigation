@@ -48,7 +48,18 @@
 
 }
 #more-rpi-container-sidebar {
+	background: transparent;
+}
+#more-rpi-container-sidebar .rpi-container-sidebar-wrapper {
 	background: #093E5A;
+}
+a#rpi-container-sidebar-button {
+    background-color: #093E5A;
+    color: #fff;
+}
+a#rpi-container-sidebar-button:hover {
+    background-color: #1B638A;
+    color: #fff;
 }
 
 .rpi-container-sidebar-content a{

@@ -100,10 +100,19 @@ jQuery(document).ready(function($){
 
         jQuery("#more-rpi-container-sidebar").css('display','block');
         jQuery("#more-rpi-container-sidebar").sidebar();
+		$("#more-rpi-container-sidebar").css('left', '-400px');
         jQuery("#rpi-services-button").on("click", function () {
             jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
             return false;
         });
+		jQuery("#rpi-container-sidebar-button").on("click", function () {
+            jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
+            return false;
+        });
+		
+		$("#more-rpi-container-sidebar").on("sidebar:closed", function () {
+		   $("#more-rpi-container-sidebar").css('left', '-400px');
+		});
 
 
     }
