@@ -12,6 +12,7 @@ jQuery(document).ready(function($){
 
     $("#more-rpi-container-sidebar").css('display','block');
     $("#more-rpi-container-sidebar").sidebar();
+    $("#more-rpi-container-sidebar").css('left', '-400px');
     $("#rpi-services-button").on("click", function () {
         $("#more-rpi-container-sidebar").trigger("sidebar:toggle");
         return false;
@@ -19,7 +20,10 @@ jQuery(document).ready(function($){
 
     $('#rpi-services-button').insertBefore('#left-menu-toggle');
 
-
+    jQuery("#rpi-container-sidebar-button").on("click", function () {
+        jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
+        return false;
+    });
 
 
 });
