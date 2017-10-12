@@ -87,7 +87,7 @@ jQuery(document).ready(function($){
          */
 
         jQuery(document).on( 'scroll', function(e){
-            if(jQuery('#masthead .navigation-top').position().top < 33 ){
+            if(jQuery('#masthead .navigation-top').length && jQuery('#masthead .navigation-top').position().top < 33 ){
                 var nav = jQuery('#site-navigation').html();
                 jQuery('#rpi-top-menu').html(nav);
                 jQuery('#rpi-top-menu').show();

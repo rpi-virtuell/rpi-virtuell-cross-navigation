@@ -262,7 +262,7 @@ class RW_MultiInstanz_Navigation_Settings {
 
             update_option(RW_MultiInstanz_Navigation_Settings::$option_name,array(
                 'loginbutton'=>1,
-                'buddypress-url'=>'http://gruppen.rpi-virtuell.de'
+                'buddypress-url'=>'https://gruppen.rpi-virtuell.de'
             ));
 
         }

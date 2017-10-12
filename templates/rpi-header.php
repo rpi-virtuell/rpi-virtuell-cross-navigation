@@ -14,7 +14,7 @@
                 <div class="rpi-left-col">
 
                     <div class="rpi-header-logo">
-                        <a href="http://rpi-virtuell.de/"><img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png"></a>
+                        <a href="//rpi-virtuell.de/"><img src="<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/rpi-logo-trans.png"></a>
                         <div class="rpi-header-blogname" >
                             <!--style="background: url('<?php echo RW_MultiInstanz_Navigation::$plugin_url;?>/assets/blogs.png') no-repeat 10px center; background-size: 50px"-->
                             <a href="<?php echo get_site_url(); ?>">
@@ -67,7 +67,7 @@
                         <ul class="rpi-header-account">
                             <!-- Notification -->
                             <li class="rpi-header-notifications icon-button">
-                                <a class="rpi-notification-link fa fa-bell no-alert" href="http://gruppen.rpi-virtuell.de/members/<?php echo $user->user_login; ?>/notifications/">
+                                <a class="rpi-notification-link fa fa-bell no-alert" href="//gruppen.rpi-virtuell.de/members/<?php echo $user->user_login; ?>/notifications/">
                                     <span id="rpi-pending-notifications" class="count">0</span>
                                 </a>
                             </li>
