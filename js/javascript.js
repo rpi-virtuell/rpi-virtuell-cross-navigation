@@ -123,8 +123,9 @@ jQuery(document).ready(function($){
     /**
      * checken ob der vom loginserver übergebende user "reliwerk_cas_user_account" auf dieser Instanz existiert
      * ggf. Anmelden
-     */
-
+     
+	
+     **** THIS IS NOW PART OF rw-remote-auth-client ! ****
 
 
     $.ajax({
@@ -173,7 +174,7 @@ jQuery(document).ready(function($){
         }
     });
 
-
+    */
 
 });
 
