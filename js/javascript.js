@@ -98,9 +98,17 @@ jQuery(document).ready(function($){
 
         //mehr von rpi-virtuell dienste sidebar
 
-        jQuery("#more-rpi-container-sidebar").css('display','block');
-        jQuery("#more-rpi-container-sidebar").sidebar();
-		$("#more-rpi-container-sidebar").css('left', '-400px');
+        var maxwith = ($( window ).width()); left= '';
+
+        if (maxwith > 400){
+            left =  '-400px';
+        }else{
+            left =  '-360px';
+        }
+
+        $("#more-rpi-container-sidebar").css('display','block');
+        $("#more-rpi-container-sidebar").sidebar();
+        $("#more-rpi-container-sidebar").css('left', left);
         jQuery("#rpi-services-button").on("click", function () {
             jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
             return false;
@@ -111,7 +119,7 @@ jQuery(document).ready(function($){
         });
 		
 		$("#more-rpi-container-sidebar").on("sidebar:closed", function () {
-		   $("#more-rpi-container-sidebar").css('left', '-400px');
+            $("#more-rpi-container-sidebar").css('left', left);
 		});
 
 

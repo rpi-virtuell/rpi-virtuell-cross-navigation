@@ -488,4 +488,11 @@ nav ul li:hover ul.fallback {
     #rw-mn .rpi-left-col{
         min-width: 255px;
     }
+    #more-rpi-container-sidebar .rpi-container-sidebar-wrapper {
+        width: 360px;
+    }
+    #more-rpi-container-sidebar ul{
+        padding: 0;
+        margin: 0;
+    }
 }
