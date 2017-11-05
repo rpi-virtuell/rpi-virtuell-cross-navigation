@@ -209,7 +209,7 @@ class RW_MultiInstanz_Navigation_Core {
 
         wp_enqueue_script( 'rw_cas_accunt_script','//login.reliwerk.de/account.php',array() ,'0.0.2', true );
         wp_enqueue_script( 'rw_multiinstanz_sidebar_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/jquery.sidebar.min.js' ,array() ,'0.0.2', true);
-        wp_enqueue_script( 'rw_multiinstanz_navigation_ajax_script',RW_MultiInstanz_Navigation::$plugin_url . 'js/javascript.js' ,array() ,'0.0.2', true);
+        wp_enqueue_script( 'rw_multiinstanz_navigation_javascript',RW_MultiInstanz_Navigation::$plugin_url . 'js/javascript.js' ,array() ,'0.0.3', false);
         wp_localize_script( 'rw_multiinstanz_navigation_ajax_script', 'rw_mn_ajax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
         if ( RW_MultiInstanz_Navigation_Settings::get( 'bosstheme' ) ) {

@@ -14,21 +14,21 @@
 #more-rpi-container-sidebar {
     position: fixed;
     top: 0;
-    left: -400px;
+    /*left: -400px;*/
     bottom: 0;
     width: 20%;
     color: #fff;
     z-index: 100001;
     margin-top: 70px;
     padding:0 30px 0 0;
-    min-width: 420px;
+    min-width: 300px;
     display: block;
 }
 
 
 #rpi-container-sidebar-button {
     position: absolute;
-    left: 375px;
+    /*left: 375px;*/
     transform: rotate(90deg);
     top: 88px;
     padding: 2px 10px 0 10px;
@@ -40,7 +40,7 @@
 #more-rpi-container-sidebar .rpi-container-sidebar-wrapper {
 	background: #093E5A;
 	padding: 0 0 30px 0;
-	width:400px; 
+	width:80px;
 }
 
 .admin-bar #more-rpi-container-sidebar {
@@ -141,7 +141,7 @@
 }
 #rw-mn .rpi-left-col{
     flex: 0 400px;
-    min-width: 350px;
+    /*min-width: 350px;*/
 }
 #rw-mn .rpi-center-col{
     flex: 1 0px;
@@ -151,24 +151,6 @@
 #rw-mn .rpi-right-col{
     flex: 0 400px;
 
-}
-
-@media all and (max-width: 800px) {
-    #rw-mn .rpi-center-col{
-        display: none;
-    }
-    #rw-mn .rpi-left-col{
-        flex: 1;
-        max-width: 400px;
-    }
-    #rw-mn .rpi-right-col{
-        flex:0 150px
-    }
-}
-@media all and (max-width: 600px) {
-    #rw-mn .rpi-header-more-rpi {
-        display: none;
-    }
 }
 
 
@@ -435,7 +417,9 @@ nav ul li:hover ul.fallback {
     display:block;
 }
 
-
+#rw-mn nav.mobile{
+    display:none;
+}
 
 /******************************************************************************************/
 #tc-page-wrap .tc-header, #tc-sn{
@@ -449,6 +433,7 @@ nav ul li:hover ul.fallback {
 }
 
 @media all and (max-width: 1024px) {
+    /*
     .rpi-header-notifications, .rpi-user-name{
         display: none;
     }
@@ -458,7 +443,7 @@ nav ul li:hover ul.fallback {
     }
     #rw-mn #rpi-user-avatar {
         margin-right: 13px;
-        float: right;
+        width:100%;
     }
     #rw-mn .rpi-header-more-rpi{
 
@@ -466,33 +451,121 @@ nav ul li:hover ul.fallback {
     #rw-mn .rw-search-wrapper{
         flex: 0;
     }
+    */
+    #rw-mn .rpi-header-logo .rpi-header-blogname{
+
+    }
+    #rw-mn .rpi-left-col{
+        flex:0 75%;
+    }
+    #rw-mn .rpi-right-col{
+        flex:0 25%;
+    }
+    #rw-mn nav.mobile{
+        display:block;
+    }
+
+    #rw-mn nav.mobile ul.rpi-header-account .rpi-header-avatar {
+
+        display: flex;
+        float: right;
+
+    }
+    #more-rpi-container-sidebar ul{
+        padding: 0;
+        margin: 0;
+        min-width:90px;
+    }
+    .rpi-header-button, .rpi-header-signon{
+        display:none;
+    }
+
+    #rw-mn .rpi-left-col{
+        flex: 0 400px;
+        max-width: 400px;
+    }
+    #rw-mn .rpi-right-col{
+        flex:1;
+    }
+    #rw-mn .rpi-header-more-rpi {
+        display: none;
+    }
+    .rpi-header-button, .rpi-header-signon{
+        display:none;
+    }
+    #rw-mn nav.mobile ul.rpi-header-account .rpi-header-avatar, #rpi-user-avatar {
+
+        display: inline;
+        float: right;
+
+    }
 }
+@media all and (max-width: 900px) {
+    #rw-mn .rpi-center-col{
+        display: none;
+    }
+}
+
 @media all and (max-width: 768px) {
+
     #rw-mn{
         position:absolute;
     }
     #rw-mn .rpi-header-avatar {
         margin-top: 17px;
     }
-    #rw-mn .rpi-right-col {
-        flex: 1;
-    }
     #rw-mn .rpi-header-logo img{
         margin-top: 11px;
     }
-}
-@media all and (max-width: 420px) {
+
+
     #rw-mn .rpi-header-logo .rpi-header-blogname{
-        flex: 0;
+
     }
     #rw-mn .rpi-left-col{
-        min-width: 255px;
+        flex:0 75%;
     }
-    #more-rpi-container-sidebar .rpi-container-sidebar-wrapper {
-        width: 360px;
+    #rw-mn .rpi-right-col{
+        flex:0 25%;
     }
+    #rw-mn nav.mobile{
+        display:block;
+    }
+
+
     #more-rpi-container-sidebar ul{
         padding: 0;
         margin: 0;
+        min-width:90px;
+    }
+
+
+}
+
+@media all and (max-width: 420px) {
+    rpi-header-more-rpi{
+        display: none;
+    }
+
+    rw-mn .rpi-center-col{
+        display: none;
+    }
+    #rw-mn .rpi-left-col{
+        width:75%;
+    }
+    #rw-mn .rpi-right-col{
+        width:25%;
+    }
+    #rw-mn nav.mobile{
+        display:block;
+    }
+
+    #more-rpi-container-sidebar ul{
+        padding: 0;
+        margin: 0;
+        min-width:90px;
+    }
+    .rpi-header-button, .rpi-header-signon{
+        display:none;
     }
 }

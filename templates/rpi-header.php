@@ -5,6 +5,7 @@
  * Date: 30.01.2017
  * Time: 13:33
  */
+
 ?>
 <header id="rpi-masthead" class="rpi-site-header" role="banner" data-infinite="on">
 
@@ -45,13 +46,37 @@
 
 
                         <?php if(!is_user_logged_in()):?>
+                        <nav class="mobile">
+                            <ul class="rpi-header-account">
+                                <li class="rpi-header-avatar">
+                                    <div id="rpi-user-avatar">
+                                        <i class="fa fa-user" aria-hidden="true" style="margin-left:10px; color: #7a9dbc; font-size:80px!important; float:right"></i>
+                                    </div>
+                                    <ul class="fallback">
+                                        <li id="rpi-header-account-register" class="rpi-header-account-register">
+                                            <a href="<?php echo wp_registration_url(); ?>">
+                                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                                <span>Registrieren</span>
+                                            </a>
+                                        </li>
+                                        <li id="rpi-header-account-login" class="rpi-header-account-login">
+                                            <a href="<?php echo wp_login_url(); ?>">
+                                                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                                <span>Anmelden</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                            </ul>
+                        </nav>
                         <ul class="rpi-header-signon">
                             <?php if ( RW_MultiInstanz_Navigation_Settings::get( 'loginbutton' ) ) :?>
                                 <li class="rpi-header-button register-button">
                                     <?php if ( get_option( 'users_can_register' ) ) {
-	                                    $url = '<a href="' . wp_registration_url() . '" title="Registrieren">Registrieren</a>';
+                                        $url = '<a href="' . wp_registration_url() . '" title="Registrieren">Registrieren</a>';
                                     } else {
-	                                    $url = '<a href="' . "https://about.rpi-virtuell.de/bei-rpi-virtuell-registrieren/" . '" title="Registrieren">Registrieren</a>';
+                                        $url = '<a href="' . "https://about.rpi-virtuell.de/bei-rpi-virtuell-registrieren/" . '" title="Registrieren">Registrieren</a>';
 
                                     }
                                     echo apply_filters( 'register', $url );
@@ -60,9 +85,10 @@
                                 <li class="rpi-header-button login-button">
                                     <a href="<?php echo wp_login_url(); ?>" title="Anmelden">Anmelden</a>
                                 </li>
-                                <?php endif;?>
+                            <?php endif;?>
 
                         </ul>
+
                         <?php else: $user=wp_get_current_user();?><nav>
                         <ul class="rpi-header-account">
                             <!-- Notification -->

@@ -100,14 +100,25 @@ jQuery(document).ready(function($){
 
         var maxwith = ($( window ).width()); left= '';
 
-        if (maxwith > 400){
-            left =  '-400px';
-        }else{
-            left =  '-360px';
+        var left =  '-400px';
+        var width = '400px';
+
+        if (maxwith < 420){    //phone
+
+            maxwith -=40;
+
+            left =  (maxwith*-1)+'px';
+            width = (maxwith)+'px';
+
         }
 
+
         $("#more-rpi-container-sidebar").css('display','block');
+        $("#more-rpi-container-sidebar").css('width',width);
+        $("#more-rpi-container-sidebar .rpi-container-sidebar-wrapper").css('width',width);
         $("#more-rpi-container-sidebar").sidebar();
+        $("#rpi-container-sidebar-button").css('left', $("#more-rpi-container-sidebar").width()+'px');
+
         $("#more-rpi-container-sidebar").css('left', left);
         jQuery("#rpi-services-button").on("click", function () {
             jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
@@ -121,7 +132,15 @@ jQuery(document).ready(function($){
 		$("#more-rpi-container-sidebar").on("sidebar:closed", function () {
             $("#more-rpi-container-sidebar").css('left', left);
 		});
+        $("#more-rpi-container-sidebar").on("sidebar:opened", function () {
+            console.info($("#more-rpi-container-sidebar").width());
 
+        });
+
+        jQuery("#more-rpi-container-sidebar .rpi-container-sidebar-content").on("click", function () {
+            jQuery("#more-rpi-container-sidebar").trigger("sidebar:close");
+            return false;
+        });
 
     }
 
