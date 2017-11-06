@@ -137,7 +137,7 @@ jQuery(document).ready(function($){
 
         });
 
-        jQuery("#more-rpi-container-sidebar .rpi-container-sidebar-content").on("click", function () {
+        jQuery("#more-rpi-container-sidebar .rpi-container-sidebar-content .rpi-container-sidebar-title").on("click", function () {
             jQuery("#more-rpi-container-sidebar").trigger("sidebar:close");
             return false;
         });
