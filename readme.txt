@@ -35,6 +35,7 @@ Answer
 
 
 == Changelog ==
+0.1.6 fix javascript gz min
 0.1.5 fix sidebar close on content click
 0.1.4 responsive fixes
 0.1.3 remove auto-login

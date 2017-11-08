@@ -3,31 +3,16 @@
  */
 jQuery(document).ready(function($){
 
+
     $('#logo').remove();
-    //$('#left-menu-toggle').remove();
 
-    $('.left-col .header-links').append('<a id="rpi-services-button" href="#mehr-rpi-virtuell"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>');
-
-    //mehr von rpi-virtuell dienste sidebar
-
-    $("#more-rpi-container-sidebar").css('display','block');
-    $("#more-rpi-container-sidebar").sidebar();
-        $("#rpi-services-button").on("click", function () {
-        $("#more-rpi-container-sidebar").trigger("sidebar:toggle");
-        return false;
-    });
-
+    $('.left-col .header-links').append('<a id="rpi-services-button" class="arrow-down" href="#mehr-rpi-virtuell"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></a>');
     $('#rpi-services-button').insertBefore('#left-menu-toggle');
+    $('#left-menu-toggle').remove();
 
-    jQuery("#rpi-container-sidebar-button").on("click", function () {
+    jQuery("#rpi-services-button.arrow-down").on("click", function () {
         jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
         return false;
     });
-    $("#more-rpi-container-sidebar").css('left', '-400px');
-
-    $("#more-rpi-container-sidebar").on("sidebar:closed", function () {
-        $("#more-rpi-container-sidebar").css('left', '-400px');
-    });
-
 
 });

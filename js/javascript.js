@@ -7,6 +7,9 @@
 
 jQuery(document).ready(function($){
 
+
+
+
     if(jQuery('#rw-mn').length>0){
         if(jQuery('#wpadminbar').length!=0 && jQuery('body.wp-admin').length==0){
             jQuery('html').attr('style', 'margin-top: 100px !important');
@@ -96,7 +99,28 @@ jQuery(document).ready(function($){
             }
         });
 
-        //mehr von rpi-virtuell dienste sidebar
+
+    }
+
+    if($("#more-rpi-container-sidebar").length>0){
+
+        var  setbutton = function(){
+
+            var btn = jQuery("#rpi-container-sidebar-button");
+            var bar = jQuery(".rpi-container-sidebar-content");
+            var l = btn.position().left;
+            var w = bar.outerWidth();
+            $("#more-rpi-container-sidebar").css('width',w);
+            $("#more-rpi-container-sidebar .rpi-container-sidebar-wrapper").css({'width':w, 'padding':'0'});
+            if(l>w){
+                var d = 30 + (l-w);
+            }else{
+                var d = 30;
+            }
+            $("#rpi-container-sidebar-button").css('left', (w-d)+'px');
+
+
+        };
 
         var maxwith = ($( window ).width()); left= '';
 
@@ -105,103 +129,46 @@ jQuery(document).ready(function($){
 
         if (maxwith < 420){    //phone
 
-            maxwith -=40;
+            maxwith -=30;
 
             left =  (maxwith*-1)+'px';
             width = (maxwith)+'px';
-
         }
 
 
-        $("#more-rpi-container-sidebar").css('display','block');
-        $("#more-rpi-container-sidebar").css('width',width);
-        $("#more-rpi-container-sidebar .rpi-container-sidebar-wrapper").css('width',width);
-        $("#more-rpi-container-sidebar").sidebar();
-        $("#rpi-container-sidebar-button").css('left', $("#more-rpi-container-sidebar").width()+'px');
 
+
+        $("#more-rpi-container-sidebar").css('width',width);
+        $("#more-rpi-container-sidebar .rpi-container-sidebar-wrapper").css({'width':width, 'padding':'0'});
+        $("#more-rpi-container-sidebar").sidebar();
+        $("#more-rpi-container-sidebar").css('display','block');
         $("#more-rpi-container-sidebar").css('left', left);
+
+        $("#more-rpi-container-sidebar").trigger("sidebar:close");
+
+        $("#more-rpi-container-sidebar").on("sidebar:closed", function () {
+            $("#more-rpi-container-sidebar").css('left', left);
+            setbutton();
+        });
+
         jQuery("#rpi-services-button").on("click", function () {
             jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
             return false;
         });
-		jQuery("#rpi-container-sidebar-button").on("click", function () {
+        jQuery("#rpi-container-sidebar-button").on("click", function () {
             jQuery("#more-rpi-container-sidebar").trigger("sidebar:toggle");
             return false;
         });
-		
-		$("#more-rpi-container-sidebar").on("sidebar:closed", function () {
-            $("#more-rpi-container-sidebar").css('left', left);
-		});
+
         $("#more-rpi-container-sidebar").on("sidebar:opened", function () {
-            console.info($("#more-rpi-container-sidebar").width());
-
         });
 
-        jQuery("#more-rpi-container-sidebar .rpi-container-sidebar-content .rpi-container-sidebar-title").on("click", function () {
-            jQuery("#more-rpi-container-sidebar").trigger("sidebar:close");
-            return false;
+        jQuery("#more-rpi-container-sidebar .rpi-container-sidebar-content").on("click", function () {
         });
-
     }
 
 
 
-
-    /**
-     * checken ob der vom loginserver übergebende user "reliwerk_cas_user_account" auf dieser Instanz existiert
-     * ggf. Anmelden
-     
-	
-     **** THIS IS NOW PART OF rw-remote-auth-client ! ****
-
-
-    $.ajax({
-        type: 'POST',
-        url: rw_mn_ajax.ajaxurl,     // the variable ajaxurl is prepared by wp core
-        data: {
-            action: 'rw_multiinstanz_navigation_core_ajaxresponse',
-            user: reliwerk_cas_user_account
-        },
-        success: function (data, textStatus, XMLHttpRequest) {
-
-            readData = $.parseJSON(data);
-            console.log($.parseJSON(data));
-
-            switch (readData.status ){
-                case 'not-logged-in-user':
-                    if($('#rpi-user-name')){
-
-                        $('#rpi-user-name').html(  readData.name  );
-                        $('#rpi-user-avatar').html(  readData.avatar  );
-                        $('#rpi-user-status').html(  'Du bist als ' + reliwerk_cas_user_account + ' am Loginserver angemeldet!'  );
-
-                    }
-                    break;
-                case 'logged-in':
-                    if($('#rpi-user-name')){
-
-                        $('#rpi-user-name').html(  readData.name  );
-                        $('#rpi-user-avatar').html(  readData.avatar  );
-
-                    }
-                    break;
-                case 'do-loggin':
-                    document.location.href='/wp-login.php';
-                    break;
-                default: //unknown
-
-            }
-
-
-
-
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-            console.log(errorThrown);
-        }
-    });
-
-    */
 
 });
 
