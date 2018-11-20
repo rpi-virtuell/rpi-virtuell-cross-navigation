@@ -85,14 +85,6 @@
 						</span>
 						</a>
 					</li>
-					<li>
-						<a href="https://blogs.rpi-virtuell.de/reformation">
-							<i class="fa fa-search"></i>
-							<span class="service-label">
-							Reformation 2017 (Praxistipps)
-						</span>
-						</a>
-					</li>
 				</ul>
 			</div>
 			<div class="rpi-about-link">
