@@ -54,37 +54,30 @@
 			<div class="rpi-more-services rpi-service-more">
 				<ul>
 					<li>
-						<a href="https://blogs.rpi-virtuell.de/artothek">
-							<i class="fa fa-picture-o"></i>
-							<span class="service-label">
-							Artothek (Kunst-Ausstellungen)
-						</span>
-						</a>
-					</li>
-					<li>
-						<a href="https://kurse.rpi-virtuell.de/">
-							<i class="fa fa-university"></i>
-							<span class="service-label">
-							Kurse (Lernmanagementsystem)
-						</span>
-						</a>
-					</li>
-					<li>
 						<a href="https://relilex.de/">
 							<i class="fa fa-book"></i>
 							<span class="service-label">
-							relilex (Lexikon Religion)
-						</span>
+								relilex (Lexikon Religion)
+						        </span>
 						</a>
 					</li>
 					<li>
 						<a href="https://openreli.de/">
 							<i class="fa fa-graduation-cap"></i>
 							<span class="service-label">
-							openreli (offener Online Kurs)
-						</span>
+								openreli (offener Online Kurs)
+						        </span>
 						</a>
 					</li>
+					<li>
+						<a href="https://cloud.rpi-virtuell.de/">
+							<i class="fa fa-book"></i>
+							<span class="service-label">
+								Cloud (gemeinsame Dateien)
+							</span>
+						</a>
+					</li>
+					
 				</ul>
 			</div>
 			<div class="rpi-about-link">
