@@ -178,6 +178,10 @@ class RW_MultiInstanz_Navigation {
         //enable buddypress functions
         //add_action( 'bp_include',      array( 'RW_MultiInstanz_Navigation_Buddypress','init' ) ,99);
         //do_action( 'rw_multiinstanz_navigation_buddypress_init' );
+
+        if(!defined('REGISTER_URL')){
+            define('REGISTER_URL', "https://konto.rpi-virtuell.de/registrieren/?ref_service=" . urlencode(get_home_url()));
+        }
     }
 
     /**

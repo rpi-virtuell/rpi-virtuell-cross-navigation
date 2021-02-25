@@ -5,7 +5,6 @@
  * Date: 30.01.2017
  * Time: 13:33
  */
-
 ?>
 <header id="rpi-masthead" class="rpi-site-header" role="banner" data-infinite="on">
 
@@ -76,7 +75,7 @@
                                     <?php if ( get_option( 'users_can_register' ) ) {
                                         $url = '<a href="' . wp_registration_url() . '" title="Registrieren">Registrieren</a>';
                                     } else {
-                                        $url = '<a href="' . "https://about.rpi-virtuell.de/bei-rpi-virtuell-registrieren/" . '" title="Registrieren">Registrieren</a>';
+                                        $url = '<a href="' . REGISTER_URL . '" title="Registrieren">Registrieren</a>';
 
                                     }
                                     echo apply_filters( 'register', $url );
