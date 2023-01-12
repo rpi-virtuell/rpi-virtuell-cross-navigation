@@ -11,7 +11,7 @@
  * Plugin Name:       RPI Multi-Instanz Navigation
  * Plugin URI:        https://github.com/rpi-virtuell/rw-multiinstanz-navigation
  * Description:       Topnaviationsleiste über allen Dienste von rpi-virtuell
- * Version:           1.1.7
+ * Version:           1.2.0
  * Author:            Joachim Happel
  * Author URI:        http://joachim-happel.de
  * License:           GNU General Public License v2
@@ -34,7 +34,7 @@ class RW_MultiInstanz_Navigation {
      * @since   0.0.1
      * @access  public
      */
-    static public $version = "1.1.7";
+    static public $version = "1.2.0";
 
     /**
      * Singleton object holder
